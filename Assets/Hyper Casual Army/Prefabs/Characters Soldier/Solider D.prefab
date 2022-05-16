@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 932959204275357502}
   - component: {fileID: 8888167035358495500}
-  - component: {fileID: 4203732436758611339}
   m_Layer: 0
   m_Name: Soldier 01
   m_TagString: Untagged
@@ -74,6 +73,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -147,20 +147,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.40661913, z: 0.022897363}
     m_Extent: {x: 0.9052688, y: 1.0423453, z: 0.26830783}
   m_DirtyAABB: 0
---- !u!64 &4203732436758611339
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133107641223764821}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6763606396598381342, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &384781856813342910
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +648,6 @@ GameObject:
   m_Component:
   - component: {fileID: 10359973780379024}
   - component: {fileID: 7553020407948156708}
-  - component: {fileID: 2130742959906676474}
   m_Layer: 0
   m_Name: Soldier Head 04
   m_TagString: Untagged
@@ -695,6 +680,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -768,20 +754,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00001116097, y: 1.3713057, z: 0.15803489}
     m_Extent: {x: 0.24498264, y: 0.15202737, z: 0.4002212}
   m_DirtyAABB: 0
---- !u!64 &2130742959906676474
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3584929890316295811}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5655946461659704958, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &3895662911841475634
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +764,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6971936764819108014}
   - component: {fileID: 5378270765271364712}
-  - component: {fileID: 5606806520262168701}
   m_Layer: 0
   m_Name: Soldier 03
   m_TagString: Untagged
@@ -825,6 +796,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -898,20 +870,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.40661907, z: 0.023186326}
     m_Extent: {x: 0.9052688, y: 1.0423452, z: 0.26801887}
   m_DirtyAABB: 0
---- !u!64 &5606806520262168701
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3895662911841475634}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3045023284086478895, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &4141784560517342468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1033,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6579599737325506673}
   - component: {fileID: 5910313633191371794}
-  - component: {fileID: 2514284518518650283}
   m_Layer: 0
   m_Name: Soldier Head 01
   m_TagString: Untagged
@@ -1108,6 +1065,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1181,20 +1139,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.030457973, y: 1.3521488, z: 0.044499785}
     m_Extent: {x: 0.26604754, y: 0.1266756, z: 0.2842534}
   m_DirtyAABB: 0
---- !u!64 &2514284518518650283
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4648497361999019657}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 736618698260629627, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &4648647886072194774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,7 +1149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 349067370266506769}
   - component: {fileID: 6275975536675399541}
-  - component: {fileID: 3596034377690498384}
   m_Layer: 0
   m_Name: Soldier 02
   m_TagString: Untagged
@@ -1238,6 +1181,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1311,20 +1255,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.40661907, z: 0.023186326}
     m_Extent: {x: 0.9052688, y: 1.0423452, z: 0.26801887}
   m_DirtyAABB: 0
---- !u!64 &3596034377690498384
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4648647886072194774}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5754926381272625969, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &4761490520560262172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,7 +1326,6 @@ GameObject:
   m_Component:
   - component: {fileID: 301135512570398485}
   - component: {fileID: 2528486864593039664}
-  - component: {fileID: 8649311276106490835}
   m_Layer: 0
   m_Name: Soldier 04
   m_TagString: Untagged
@@ -1429,6 +1358,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1502,20 +1432,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.40661907, z: 0.023186326}
     m_Extent: {x: 0.9052688, y: 1.0423452, z: 0.26801887}
   m_DirtyAABB: 0
---- !u!64 &8649311276106490835
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5673520278966878600}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1410523342309664176, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &5976267924156300332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1597,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2996569445628387344}
   - component: {fileID: 1151591394560590088}
-  - component: {fileID: 3854630120351294082}
   m_Layer: 0
   m_Name: Soldier Head 03
   m_TagString: Untagged
@@ -1714,6 +1629,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1787,20 +1703,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 1.3215145, z: 0.034270853}
     m_Extent: {x: 0.32112795, y: 0.20207274, z: 0.3352044}
   m_DirtyAABB: 0
---- !u!64 &3854630120351294082
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6715818640206871576}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7946134326319199817, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &6722201536361714948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1808,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1665530402121286663}
   - component: {fileID: 5206658223457590577}
-  - component: {fileID: 8796635082302413994}
   m_Layer: 0
   m_Name: Soldier Head 02
   m_TagString: Untagged
@@ -1939,6 +1840,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2012,20 +1914,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 1.3215145, z: 0.034270883}
     m_Extent: {x: 0.32112852, y: 0.20207274, z: 0.33520436}
   m_DirtyAABB: 0
---- !u!64 &8796635082302413994
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7518902895390690673}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6603496039239812925, guid: 497c3b2382484d7aa1b7204564769c9b, type: 3}
 --- !u!1 &7700030007787297820
 GameObject:
   m_ObjectHideFlags: 0

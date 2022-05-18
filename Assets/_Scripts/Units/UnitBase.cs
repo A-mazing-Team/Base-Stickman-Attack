@@ -15,7 +15,7 @@ namespace _Scripts.Managers
         protected Animator _animator;
 
         protected LevelData _levelData;
-        [SerializeField]
+        
         protected UnitBase _currentTarget;
 
         //######STATS#######

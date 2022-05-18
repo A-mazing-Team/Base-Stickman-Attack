@@ -12,7 +12,7 @@ namespace _Scripts.Managers
 
         private void Update()
         {
-            Validate();
+            //Validate();
         }
 
         private void Validate()

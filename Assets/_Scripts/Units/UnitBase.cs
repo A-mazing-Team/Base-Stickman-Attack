@@ -1,22 +1,26 @@
 using System;
 using System.Linq;
+using _Scripts.Battle;
 using _Scripts.Levels;
 using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
 
 namespace _Scripts.Managers
 {
     public abstract class UnitBase : MonoBehaviour
     {
+        public event Action OnDeath = null;
         public Vector3 position => transform.position;
         public UnitConfig config;
 
-        [SerializeField]
-        protected Animator _animator;
+        [HideInInspector]
+        public bool IsMyTeam;
 
-        protected LevelData _levelData;
+        protected BattleManager _battleManager;
         
         protected UnitBase _currentTarget;
+        
 
         //######STATS#######
         private float _health;
@@ -39,15 +43,18 @@ namespace _Scripts.Managers
             }
         }
 
-        public void Create(UnitConfig config)
+        public void Create(BattleManager battleManager)
         {
+            //_health = config.health;
+            _battleManager = battleManager;
             _health = config.health;
         }
 
         private void Death()
         {
-            
+            OnDeath?.Invoke();
+            _battleManager.OnUnitDeath(this);
+            this.gameObject.SetActive(false);
         }
-        
     }
 }

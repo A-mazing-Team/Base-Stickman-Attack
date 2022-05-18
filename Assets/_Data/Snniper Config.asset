@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Snniper Config
   m_EditorClassIdentifier: 
   cost: 120
-  health: 10
-  damage: 20
+  health: 15
+  damage: 3
   speed: 1
-  attackRange: 5
-  attackDelay: 4
+  attackRange: 8
+  attackDelay: 2

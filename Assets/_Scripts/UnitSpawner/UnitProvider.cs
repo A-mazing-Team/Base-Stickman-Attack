@@ -1,7 +1,9 @@
 using System;
+using _Scripts.Battle;
 using _Scripts.Draw;
 using _Scripts.Managers;
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.UnitSpawner
 {
@@ -9,9 +11,11 @@ namespace _Scripts.UnitSpawner
     {
         [SerializeField]
         private Brush _brush;
-        
         [SerializeField]
         private UnitBase _currentSpawnUnit;
+
+        [Inject]
+        private BattleManager _battleManager;
 
         private void OnEnable()
         {
@@ -30,7 +34,9 @@ namespace _Scripts.UnitSpawner
 
         private void Brush_OnOnDeltaPassed(Vector3 position)
         {
-            Instantiate(_currentSpawnUnit, position, Quaternion.identity);
+            var u = Instantiate(_currentSpawnUnit, position, Quaternion.identity);
+            u.Create(_battleManager);
+            _battleManager.AddAlly(u);
         }
     }
 }

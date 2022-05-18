@@ -5,6 +5,7 @@ namespace _Scripts.Draw
 {
     public class Brush : MonoBehaviour
     {
+        private const int SpawnLayer = 7;
         public event Action<Vector3> OnDeltaPassed;
         
         [SerializeField]
@@ -33,6 +34,7 @@ namespace _Scripts.Draw
             {
                 _trailRenderer.Clear();
                 _trailRenderer.gameObject.SetActive(false);
+                _previousPosition = Vector3.zero;
             }
         }
 
@@ -44,14 +46,18 @@ namespace _Scripts.Draw
                 RaycastHit hit;
                 if(Physics.Raycast(Ray, out hit))
                 {
-                    _previousPosition = hit.point + Vector3.up * 0.1f;
-                    _trailRenderer.transform.position = _previousPosition;
-                    _trailRenderer.gameObject.SetActive(true);
+                    if (hit.collider.gameObject.layer == SpawnLayer)
+                    {
+                        _previousPosition = hit.point + Vector3.up * 0.1f;
+                        _trailRenderer.transform.position = _previousPosition;
+                        _trailRenderer.gameObject.SetActive(true);
+                    }
+                    
                 }
             }
             
             
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && _previousPosition != Vector3.zero)
             {
                 var newPosition = GetCameraPosition();
                 _trailRenderer.transform.position = newPosition;

@@ -1,4 +1,5 @@
 using System;
+using ModestTree;
 using UnityEngine;
 
 namespace _Scripts.Managers
@@ -12,11 +13,20 @@ namespace _Scripts.Managers
 
         private void Update()
         {
-            //Validate();
+            SetTarget();
+            Validate();
         }
 
         private void Validate()
         {
+            
+            if (_currentTarget == null)
+            {
+                return;
+            }
+            
+            Rotate(_currentTarget.position);
+            
             if (Vector3.Distance(_currentTarget.position, position) > config.attackRange)
             {
                 MoveToUnit(_currentTarget);
@@ -35,28 +45,39 @@ namespace _Scripts.Managers
 
         protected void SetTarget()
         {
-            UnitBase nearUnit = _levelData.enemies[0];
+            var units = _battleManager.GetUnits(!IsMyTeam);
+
+            if (units.IsEmpty())
+            {
+                return;
+            }
+            
+            UnitBase nearUnit = units[0];
             float minDistance = Vector3.Distance(nearUnit.position, position);
             
-            for (int i = 0; i < _levelData.enemies.Count; i++)
+            for (int i = 0; i < units.Count; i++)
             {
-                var d = Vector3.Distance(_levelData.enemies[i].position, position);
+                var d = Vector3.Distance(units[i].position, position);
                 if (d < minDistance)
                 {
                     minDistance = d;
-                    nearUnit = _levelData.enemies[i];
+                    nearUnit = units[i];
                 }
             }
 
             _currentTarget = nearUnit;
+            _currentTarget.OnDeath += CurrentTargetOnOnDeath;
+        }
+
+        private void CurrentTargetOnOnDeath()
+        {
+            _currentTarget = null;
         }
 
         protected virtual void Attack()
         {
-            if (_currentTarget.TakeDamage(config.damage))
-            {
-                SetTarget();
-            }
+            _shootFx.Play();
+            _currentTarget.TakeDamage(config.damage);
         }
     }
 }

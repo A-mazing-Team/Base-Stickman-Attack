@@ -5,11 +5,19 @@ namespace _Scripts.CameraMove
 {
     public class CameraMovement : MonoBehaviour
     {
+        [SerializeField]
+        private float _maxOffset;
+        
         private const int CameraTargetLayer = 6;
         private Vector3 _hitPosition = Vector3.zero;
         private Vector3 _currentPosition = Vector3.zero;
         private Vector3 _cameraPosition = Vector3.zero;
+        private Vector3 _startPosition = Vector3.zero;
 
+        private void Start()
+        {
+            _startPosition = transform.position;
+        }
 
         private void Update()
         {
@@ -39,10 +47,19 @@ namespace _Scripts.CameraMove
             _currentPosition.z = _hitPosition.z = _cameraPosition.y;
             Vector3 direction = Camera.main.ScreenToWorldPoint(_currentPosition) -
                                 Camera.main.ScreenToWorldPoint(_hitPosition);
-            
+
             direction = direction * -1;
+
             Vector3 position = _cameraPosition + direction;
+
             position.y = _cameraPosition.y;
+            
+            if (Vector3.Distance(_startPosition, position) > _maxOffset)
+            {
+                return;
+            }
+
+
             transform.position = position;
         }
 

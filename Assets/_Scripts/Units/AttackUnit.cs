@@ -11,7 +11,7 @@ namespace _Scripts.Managers
 
         private float _nextShootTime;
 
-        private void Update()
+        protected virtual void Update()
         {
             SetTarget();
             Validate();
@@ -77,7 +77,16 @@ namespace _Scripts.Managers
         protected virtual void Attack()
         {
             _shootFx.Play();
-            _currentTarget.TakeDamage(config.damage);
+            
+            if (_currentTarget.TakeDamage(config.damage))
+            {
+                SetTarget();
+            }
+
+            if (!(this is StaticMVCReceiverAttackUnit))
+            {
+                _animator.Shoot();   
+            }
         }
     }
 }

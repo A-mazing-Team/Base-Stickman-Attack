@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using _Scripts.Battle;
 using _Scripts.Levels;
+using _Scripts.MVC;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -23,7 +24,7 @@ namespace _Scripts.Managers
         
 
         //######STATS#######
-        private float _health;
+        protected float _health;
 
 
         // true ==  target death
@@ -41,6 +42,7 @@ namespace _Scripts.Managers
                 _health = newValue;
                 return false;
             }
+            
         }
 
         public void Create(BattleManager battleManager)
@@ -48,6 +50,7 @@ namespace _Scripts.Managers
             //_health = config.health;
             _battleManager = battleManager;
             _health = config.health;
+            InitAdditionalData();
         }
 
         private void Death()
@@ -55,6 +58,10 @@ namespace _Scripts.Managers
             OnDeath?.Invoke();
             _battleManager.OnUnitDeath(this);
             this.gameObject.SetActive(false);
+        }
+
+        protected virtual void InitAdditionalData()
+        {
         }
     }
 }

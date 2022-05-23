@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using _Scripts.Managers;
+using UnityEngine;
 
 namespace _Scripts.Levels
 {
-    public class LevelData
+    [CreateAssetMenu]
+    public class LevelData : ScriptableObject
     {
-        public List<UnitBase> enemies;
+        public int allyUnitsCount;
     }
 }

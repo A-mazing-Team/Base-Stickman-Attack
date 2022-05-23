@@ -1,3 +1,4 @@
+using Units;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,24 +7,29 @@ namespace _Scripts.Managers
     public abstract class MovableUnit : UnitBase
     {
         private const float SpeedRotation = 5f;
-
+        
         [SerializeField]
         private NavMeshAgent _navMeshAgent;
         [SerializeField]
-        protected Animator _animator;
+        protected UnitAnimator _animator;
 
 
         protected void MoveToUnit(UnitBase unitBase)
         {
+            if (this is StaticMVCReceiverAttackUnit)
+            {
+                return;
+            }
+            
             _navMeshAgent.SetDestination(unitBase.position);
 
             if (unitBase != this)
             {
-                _animator.SetBool("Walk", true);
+                _animator.Move(true);
             }
             else
             {
-                _animator.SetBool("Walk", false);
+                _animator.Move(false);
             }
         }
 

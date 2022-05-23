@@ -2,6 +2,7 @@ using System;
 using _Scripts.Battle;
 using _Scripts.Draw;
 using _Scripts.Managers;
+using _Scripts.MVC;
 using UnityEngine;
 using Zenject;
 
@@ -16,6 +17,7 @@ namespace _Scripts.UnitSpawner
 
         [Inject]
         private BattleManager _battleManager;
+        
 
         private void OnEnable()
         {
@@ -33,6 +35,14 @@ namespace _Scripts.UnitSpawner
         }
 
         private void Brush_OnOnDeltaPassed(Vector3 position)
+        {
+            if (_battleManager.CanSpawnAlly)
+            {
+                Spawn(position);
+            }
+        }
+
+        private void Spawn(Vector3 position)
         {
             var u = Instantiate(_currentSpawnUnit, position, Quaternion.identity);
             u.Create(_battleManager);

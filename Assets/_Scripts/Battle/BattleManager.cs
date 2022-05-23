@@ -35,6 +35,14 @@ namespace _Scripts.Battle
             }
         }
 
+        public bool HasAlly
+        {
+            get
+            {
+                return !_allies.IsEmpty();
+            }
+        }
+
         private void Awake()
         {
             _allies = new List<UnitBase>();
@@ -45,6 +53,24 @@ namespace _Scripts.Battle
             _avaliableAllyUnitsCount = _levels[_currentLevel].allyUnitsCount;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount);
             MarkEnemies();
+        }
+
+        private void Update()
+        {
+            CheckLoose();
+        }
+
+        private void CheckLoose()
+        {
+            if (_enemies.IsEmpty() && _base.gameObject.activeSelf == false)
+            {
+                Loose();
+            }
+
+            if (_allies.IsEmpty() && _instanceUnitsCounter >= _avaliableAllyUnitsCount)
+            {
+                Loose();
+            }
         }
 
         private void MarkEnemies()
@@ -88,11 +114,10 @@ namespace _Scripts.Battle
                     break;
                 }
             }
-
-            if (l.IsEmpty())
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+        } 
+        private void Loose()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

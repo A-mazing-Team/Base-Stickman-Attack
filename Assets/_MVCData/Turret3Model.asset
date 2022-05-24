@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
-  m_Name: Snniper Config
+  m_Script: {fileID: 11500000, guid: 9dfe8b1681404a168b4ec3479edd624e, type: 3}
+  m_Name: Turret3Model
   m_EditorClassIdentifier: 
-  cost: 120
-  health: 15
-  damage: 3
-  speed: 1
-  attackRange: 8
-  attackDelay: 1
+  offset: {x: 0, y: 130, z: 0}
+  maxHealth: 300
+  health: 9
+  position: {x: 0.90509284, y: -12.524745, z: -20.076155}

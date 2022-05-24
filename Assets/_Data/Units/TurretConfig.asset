@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 10
   speed: 5
   attackRange: 8
-  attackDelay: 0.2
+  attackDelay: 0.3

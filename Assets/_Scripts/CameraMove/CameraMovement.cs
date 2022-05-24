@@ -53,12 +53,16 @@ namespace _Scripts.CameraMove
             Vector3 position = _cameraPosition + direction;
 
             position.y = _cameraPosition.y;
+
+            Vector3 l = position;
+            l.y = 0;
             
-            if (Vector3.Distance(_startPosition, position) > _maxOffset)
+            if (l.magnitude > _maxOffset)
             {
                 return;
             }
-
+            
+            Debug.Log(l.magnitude);
 
             transform.position = position;
         }

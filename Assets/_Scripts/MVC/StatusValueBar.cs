@@ -7,10 +7,19 @@ namespace _Scripts.MVC
     {
         [SerializeField]
         private TextMeshProUGUI _valueLabel;
-        public override void Refresh(float value, float maxValue)
+        public override void Refresh(float value, float maxValue, bool isDiffrent)
         {
-            base.Refresh(value, maxValue);
-            _valueLabel.text = (maxValue - value).ToString();
+            base.Refresh(value, maxValue, isDiffrent);
+            
+            if (isDiffrent)
+            {
+                _valueLabel.text = (maxValue - value).ToString();
+            }
+            else
+            {
+                _valueLabel.text = value.ToString();
+            }
+            
         }
     }
 }

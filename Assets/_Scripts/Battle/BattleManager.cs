@@ -13,6 +13,11 @@ namespace _Scripts.Battle
     public class BattleManager : MonoBehaviour
     {
         [SerializeField]
+        private GameObject _winUI;
+        [SerializeField]
+        private GameObject _looseUI;
+        
+        [SerializeField]
         private List<UnitBase> _enemies;
         [SerializeField]
         private Base _base;
@@ -51,7 +56,7 @@ namespace _Scripts.Battle
         private void Start()
         {
             _avaliableAllyUnitsCount = _levels[_currentLevel].allyUnitsCount;
-            _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount);
+            _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
             MarkEnemies();
         }
 
@@ -64,12 +69,12 @@ namespace _Scripts.Battle
         {
             if (_enemies.IsEmpty() && _base.gameObject.activeSelf == false)
             {
-                Loose();
+                EndGame(true);
             }
 
             if (_allies.IsEmpty() && _instanceUnitsCounter >= _avaliableAllyUnitsCount)
             {
-                Loose();
+                EndGame(false);
             }
         }
 
@@ -89,7 +94,7 @@ namespace _Scripts.Battle
             unit.IsMyTeam = true;
             _allies.Add(unit);
             _instanceUnitsCounter++;
-            _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount);
+            _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
         }
 
         public List<UnitBase> GetUnits(bool isMyTeam)
@@ -115,7 +120,19 @@ namespace _Scripts.Battle
                 }
             }
         } 
-        private void Loose()
+        private void EndGame(bool state)
+        {
+            if (state)
+            {
+                _winUI.SetActive(true);
+            }
+            else
+            {
+                _looseUI.SetActive(true);
+            }
+        }
+
+        public void Restart()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

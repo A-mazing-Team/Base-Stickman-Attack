@@ -8,7 +8,7 @@ namespace _Scripts.MVC
         [SerializeField]
         private Image _image;
 
-        public virtual void Refresh(float value, float maxValue)
+        public virtual void Refresh(float value, float maxValue, bool isDiffrent)
         {
             _image.fillAmount = value / maxValue;
         }

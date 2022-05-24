@@ -76,7 +76,11 @@ namespace _Scripts.Managers
 
         protected virtual void Attack()
         {
-            _shootFx.Play();
+            if (_animator == null)
+            {
+                _shootFx.Play();
+            }
+            
             
             if (_currentTarget.TakeDamage(config.damage))
             {
@@ -87,6 +91,11 @@ namespace _Scripts.Managers
             {
                 _animator.Shoot();   
             }
+        }
+
+        public void Particle()
+        {
+            _shootFx.Play();
         }
     }
 }

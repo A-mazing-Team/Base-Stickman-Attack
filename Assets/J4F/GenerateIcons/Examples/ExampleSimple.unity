@@ -383,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: currentItem
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: generateItems
@@ -403,36 +403,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: prefabsQueue.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: completeQueue.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: prefabsQueue.Array.data[0]
       value: 
-      objectReference: {fileID: 7421425946850543775, guid: ba616529bf49da346ad271f7ce31e6e0,
+      objectReference: {fileID: 3289288452898435549, guid: 7eb68d35fc86138428f6964af18e1aab,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: prefabsQueue.Array.data[1]
       value: 
-      objectReference: {fileID: 5904484829218785675, guid: 43be39788f8bcf44489a9de039c1ca1d,
+      objectReference: {fileID: 7421425946850543775, guid: ba616529bf49da346ad271f7ce31e6e0,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: prefabsQueue.Array.data[2]
       value: 
-      objectReference: {fileID: 4266320062986070554, guid: 7881c4f45b76b8248b7e698945c653c7,
+      objectReference: {fileID: 5904484829218785675, guid: 43be39788f8bcf44489a9de039c1ca1d,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: prefabsQueue.Array.data[3]
       value: 
-      objectReference: {fileID: 3480788990299480351, guid: b1c2d46727fb6ad458a5fc3e51d81644,
+      objectReference: {fileID: 4266320062986070554, guid: 7881c4f45b76b8248b7e698945c653c7,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: prefabsQueue.Array.data[4]
       value: 
-      objectReference: {fileID: 5904484829218785675, guid: 43be39788f8bcf44489a9de039c1ca1d,
+      objectReference: {fileID: 3480788990299480351, guid: b1c2d46727fb6ad458a5fc3e51d81644,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: prefabsQueue.Array.data[5]
@@ -457,27 +457,27 @@ PrefabInstance:
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: completeQueue.Array.data[0]
       value: 
-      objectReference: {fileID: 7421425946850543775, guid: ba616529bf49da346ad271f7ce31e6e0,
+      objectReference: {fileID: 3289288452898435549, guid: 7eb68d35fc86138428f6964af18e1aab,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: completeQueue.Array.data[1]
       value: 
-      objectReference: {fileID: 5904484829218785675, guid: 43be39788f8bcf44489a9de039c1ca1d,
+      objectReference: {fileID: 7421425946850543775, guid: ba616529bf49da346ad271f7ce31e6e0,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: completeQueue.Array.data[2]
       value: 
-      objectReference: {fileID: 4266320062986070554, guid: 7881c4f45b76b8248b7e698945c653c7,
+      objectReference: {fileID: 5904484829218785675, guid: 43be39788f8bcf44489a9de039c1ca1d,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: completeQueue.Array.data[3]
       value: 
-      objectReference: {fileID: 3480788990299480351, guid: b1c2d46727fb6ad458a5fc3e51d81644,
+      objectReference: {fileID: 4266320062986070554, guid: 7881c4f45b76b8248b7e698945c653c7,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: completeQueue.Array.data[4]
       value: 
-      objectReference: {fileID: 5904484829218785675, guid: 43be39788f8bcf44489a9de039c1ca1d,
+      objectReference: {fileID: 3480788990299480351, guid: b1c2d46727fb6ad458a5fc3e51d81644,
         type: 3}
     - target: {fileID: 11400032, guid: 617913a8b5ec140439e99bc7fba84fcb, type: 3}
       propertyPath: completeQueue.Array.data[5]

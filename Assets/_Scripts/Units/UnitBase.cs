@@ -53,7 +53,7 @@ namespace _Scripts.Managers
             InitAdditionalData();
         }
 
-        private void Death()
+        protected virtual void Death()
         {
             OnDeath?.Invoke();
             _battleManager.OnUnitDeath(this);

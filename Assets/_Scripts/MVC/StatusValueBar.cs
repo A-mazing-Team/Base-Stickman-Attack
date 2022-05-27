@@ -20,6 +20,7 @@ namespace _Scripts.MVC
                 _valueLabel.text = value.ToString();
             }
             
+            
         }
     }
 }

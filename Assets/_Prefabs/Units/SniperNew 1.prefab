@@ -5860,6 +5860,9 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 1398684688406658934}
   _animator: {fileID: 6465683260701851635}
   _shootFx: {fileID: 7693708325964968195}
+  _bulletPrefab: {fileID: 9000765768285259616, guid: 6305332af2f294cac900ad6e07245220,
+    type: 3}
+  _shootPosition: {fileID: 3991078811973487891}
 --- !u!195 &1398684688406658934
 NavMeshAgent:
   m_ObjectHideFlags: 0

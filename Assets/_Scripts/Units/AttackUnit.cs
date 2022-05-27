@@ -8,6 +8,11 @@ namespace _Scripts.Managers
     {
         [SerializeField]
         protected ParticleSystem _shootFx;
+        [SerializeField]
+        private Bullet _bulletPrefab;
+        
+        [SerializeField]
+        private Transform _shootPosition;
 
         private float _nextShootTime;
 
@@ -76,26 +81,34 @@ namespace _Scripts.Managers
 
         protected virtual void Attack()
         {
-            if (_animator == null)
-            {
-                _shootFx.Play();
-            }
-            
-            
-            if (_currentTarget.TakeDamage(config.damage))
-            {
-                SetTarget();
-            }
-
             if (!(this is StaticMVCReceiverAttackUnit))
             {
                 _animator.Shoot();   
             }
         }
 
-        public void Particle()
+        public void OnAnimationShoot()
         {
             _shootFx.Play();
+            
+            if (_currentTarget != null && _currentTarget.TakeDamage(config.damage))
+            {
+                SetTarget();
+            }
+            
+            SpawnBullet();
+        }
+
+        private void SpawnBullet()
+        {
+            if (_currentTarget == null)
+            {
+                return;
+            }
+            
+            var bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.Euler(-90,0,0));
+            bullet.Shoot(_currentTarget.transform);
         }
     }
+    
 }

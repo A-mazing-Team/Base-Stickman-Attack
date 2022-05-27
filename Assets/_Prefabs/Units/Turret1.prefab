@@ -5880,6 +5880,9 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 0}
   _animator: {fileID: 0}
   _shootFx: {fileID: 8669451646613933631}
+  _bulletPrefab: {fileID: 9000765768285259616, guid: 6305332af2f294cac900ad6e07245220,
+    type: 3}
+  _shootPosition: {fileID: 7533010236998984144}
   _modelBase: {fileID: 0}
 --- !u!1 &6690003090242122689
 GameObject:

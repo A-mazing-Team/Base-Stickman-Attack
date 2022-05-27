@@ -10,7 +10,7 @@ namespace _Scripts.MVC
         [SerializeField]
         private StatusBar _statusBar;
 
-        private void LateUpdate()
+        private void Update()
         {
             _statusBar.Refresh(_modelBase.health, _modelBase.maxHealth, false);
             _statusBar.transform.position =  Camera.main.WorldToScreenPoint(_modelBase.position) + _modelBase.offset;

@@ -12,5 +12,10 @@ namespace _Scripts.MVC
         {
             _image.fillAmount = value / maxValue;
         }
+
+        public void Disable()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -19,5 +19,11 @@ namespace _Scripts.Managers
         {
             _modelBase.maxHealth = config.health;
         }
+
+        protected override void Death()
+        {
+            base.Death();
+            _modelBase.health = 0;
+        }
     }
 }

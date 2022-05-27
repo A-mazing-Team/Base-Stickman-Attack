@@ -71,7 +71,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 15012203058654f27a867fb5089e308d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5f43b346e2db64454822f5042cd5bcb7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -83,7 +83,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SniperAnimator
+  m_Name: ShooterAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Move
@@ -296,8 +296,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7344732019415628306, guid: b399e89c32af1d2439ae0cae9b978787,
-    type: 3}
+  m_Motion: {fileID: 369801801755258246, guid: 9a4dabea69f1fa24abc51256d20bf4c2, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

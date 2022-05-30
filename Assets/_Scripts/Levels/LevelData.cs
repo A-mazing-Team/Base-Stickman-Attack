@@ -8,5 +8,6 @@ namespace _Scripts.Levels
     public class LevelData : ScriptableObject
     {
         public int allyUnitsCount;
+        public GameObject enemiesPrefab;
     }
 }

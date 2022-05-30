@@ -4,6 +4,7 @@ using _Scripts.Levels;
 using _Scripts.Managers;
 using _Scripts.MVC;
 using _Scripts.PlayerBase;
+using _Scripts.Save;
 using ModestTree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,20 +17,24 @@ namespace _Scripts.Battle
         private GameObject _winUI;
         [SerializeField]
         private GameObject _looseUI;
-        
-        [SerializeField]
-        private List<UnitBase> _enemies;
+
         [SerializeField]
         private Base _base;
+
         [SerializeField]
         private LevelData[] _levels;
+
         [SerializeField]
         private StatusValueBar _statusValueBar;
-        
+
+        [SerializeField]
+        private UnitBase[] _staticEnemiesUnits;
+
+
         private List<UnitBase> _allies;
 
+        private List<UnitBase> _enemies;
         private int _avaliableAllyUnitsCount = 0;
-        private int _currentLevel = 0;
         private int _instanceUnitsCounter;
 
         public bool CanSpawnAlly
@@ -55,14 +60,49 @@ namespace _Scripts.Battle
 
         private void Start()
         {
-            _avaliableAllyUnitsCount = _levels[_currentLevel].allyUnitsCount;
+            if (User.Level + 1 > _levels.Length)
+            {
+                User.Level--;
+            }
+            
+            CreateEnemies();
+            _avaliableAllyUnitsCount = _levels[User.Level].allyUnitsCount;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
-            MarkEnemies();
         }
 
         private void Update()
         {
             CheckLoose();
+        }
+
+        private void CreateEnemies()
+        {
+            _enemies = new List<UnitBase>();
+            
+            var enemiesParent = Instantiate(_levels[User.Level].enemiesPrefab, Vector3.zero, Quaternion.identity);
+
+            foreach (Transform enemy in enemiesParent.transform)
+            {
+                UnitBase unitBase = enemy.gameObject.GetComponent<UnitBase>();
+
+                if (unitBase == null)
+                {
+                    continue;
+                }
+                
+                _enemies.Add(unitBase);
+                unitBase.Create(this);
+                unitBase.IsMyTeam = false;
+            }
+
+            foreach (var staticEnemies in _staticEnemiesUnits)
+            {
+                _enemies.Add(staticEnemies);
+                staticEnemies.Create(this);
+                staticEnemies.IsMyTeam = false;
+            }
+            
+            _base.Create(this);
         }
 
         private void CheckLoose()
@@ -78,17 +118,6 @@ namespace _Scripts.Battle
             }
         }
 
-        private void MarkEnemies()
-        {
-            foreach (var enemy in _enemies)
-            {
-                enemy.Create(this);
-                enemy.IsMyTeam = false;
-            }
-            
-            _base.Create(this);
-        }
-        
         public void AddAlly(UnitBase unit)
         {
             unit.IsMyTeam = true;
@@ -124,6 +153,7 @@ namespace _Scripts.Battle
         {
             if (state)
             {
+                User.Level++;
                 _winUI.SetActive(true);
             }
             else

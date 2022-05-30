@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
-  m_Name: TurretConfig
+  m_Name: HumveeConfig
   m_EditorClassIdentifier: 
   cost: 120
   health: 100
   damage: 10
   speed: 5
-  attackRange: 13
+  attackRange: 8
   attackDelay: 0.3

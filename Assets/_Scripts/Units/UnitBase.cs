@@ -21,6 +21,8 @@ namespace _Scripts.Managers
         protected BattleManager _battleManager;
         
         protected UnitBase _currentTarget;
+
+        protected bool _isPrepare;
         
 
         //######STATS#######
@@ -51,6 +53,7 @@ namespace _Scripts.Managers
             _battleManager = battleManager;
             _health = config.health;
             InitAdditionalData();
+            _isPrepare = true;
         }
 
         protected virtual void Death()

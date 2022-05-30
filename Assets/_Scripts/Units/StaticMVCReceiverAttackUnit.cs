@@ -11,18 +11,35 @@ namespace _Scripts.Managers
         protected override void Update()
         {
             base.Update();
+
+            if (_modelBase == null)
+            {
+                return;
+            }
+            
             _modelBase.health = _health;
             _modelBase.position = transform.position;
         }
 
         protected override void InitAdditionalData()
         {
+            if (_modelBase == null)
+            {
+                return;
+            }
+            
             _modelBase.maxHealth = config.health;
         }
 
         protected override void Death()
         {
+            
             base.Death();
+            
+            if (_modelBase == null)
+            {
+                return;
+            }
             _modelBase.health = 0;
         }
     }

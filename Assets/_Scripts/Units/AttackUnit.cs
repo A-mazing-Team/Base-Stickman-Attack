@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using ModestTree;
 using UnityEngine;
 
@@ -18,6 +19,11 @@ namespace _Scripts.Managers
 
         protected virtual void Update()
         {
+            if (!_isPrepare)
+            {
+                return;
+            }
+            
             SetTarget();
             Validate();
         }
@@ -48,30 +54,15 @@ namespace _Scripts.Managers
             }
         }
 
-        protected void SetTarget()
+        protected override void SetTarget()
         {
-            var units = _battleManager.GetUnits(!IsMyTeam);
-
-            if (units.IsEmpty())
+            base.SetTarget();
+            
+            if (_currentTarget != null)
             {
-                return;
+                _currentTarget.OnDeath += CurrentTargetOnOnDeath;
             }
             
-            UnitBase nearUnit = units[0];
-            float minDistance = Vector3.Distance(nearUnit.position, position);
-            
-            for (int i = 0; i < units.Count; i++)
-            {
-                var d = Vector3.Distance(units[i].position, position);
-                if (d < minDistance)
-                {
-                    minDistance = d;
-                    nearUnit = units[i];
-                }
-            }
-
-            _currentTarget = nearUnit;
-            _currentTarget.OnDeath += CurrentTargetOnOnDeath;
         }
 
         private void CurrentTargetOnOnDeath()
@@ -81,9 +72,9 @@ namespace _Scripts.Managers
 
         protected virtual void Attack()
         {
-            if (!(this is StaticMVCReceiverAttackUnit))
+            if (!(this is StaticMVCReceiverAttackUnit) || NotAnimatedTypes.All(i => i != this.GetType()))
             {
-                _animator.Shoot();   
+                _animator?.Shoot();   
             }
         }
 

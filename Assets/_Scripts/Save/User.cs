@@ -7,7 +7,15 @@ namespace _Scripts.Save
         public static int Level
         {
             get => PlayerPrefs.GetInt("Level", 0);
-            set => PlayerPrefs.SetInt("Level", value);
+            set
+            {
+                //TODO:DELETE
+                if (value == 5)
+                {
+                    value = 4;
+                }
+                PlayerPrefs.SetInt("Level", value);
+            } 
         }
         
         //public static 

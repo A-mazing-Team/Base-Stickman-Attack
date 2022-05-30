@@ -13,8 +13,8 @@ namespace _Scripts.UI
         
         public void Show(UnitConfig unlockUnit)
         {
-            _completeGroup.SetActive(unlockUnit != null);
             gameObject.SetActive(true);
+            _completeGroup.SetActive(unlockUnit != null);
             _unlockImage.sprite = unlockUnit.image;
         }
     }

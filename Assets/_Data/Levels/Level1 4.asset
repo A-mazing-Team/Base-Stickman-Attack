@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25b1a049df774d9c96c5f004fffe1740, type: 3}
-  m_Name: Level1 3
+  m_Name: Level1 4
   m_EditorClassIdentifier: 
   allyUnitsCount: 100
   enemiesPrefab: {fileID: 8441777506103110476, guid: 993c28dad730147128f714242376acd3,
     type: 3}
-  unlockUnit: {fileID: 11400000, guid: e6190446105a242deb473619876bce13, type: 2}
+  unlockUnit: {fileID: 11400000, guid: 1ae4ae51e0d664f408d89c7f94b3d07d, type: 2}

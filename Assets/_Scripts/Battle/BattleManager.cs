@@ -5,6 +5,7 @@ using _Scripts.Managers;
 using _Scripts.MVC;
 using _Scripts.PlayerBase;
 using _Scripts.Save;
+using _Scripts.UI;
 using ModestTree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,7 +15,7 @@ namespace _Scripts.Battle
     public class BattleManager : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _winUI;
+        private WinScreen _winUI;
         [SerializeField]
         private GameObject _looseUI;
 
@@ -36,6 +37,8 @@ namespace _Scripts.Battle
         private List<UnitBase> _enemies;
         private int _avaliableAllyUnitsCount = 0;
         private int _instanceUnitsCounter;
+
+        private bool _isBattleProcess;
 
         public bool CanSpawnAlly
         {
@@ -60,6 +63,7 @@ namespace _Scripts.Battle
 
         private void Start()
         {
+            _isBattleProcess = true;
             CreateEnemies();
             _avaliableAllyUnitsCount = _levels[User.Level].allyUnitsCount;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
@@ -67,7 +71,10 @@ namespace _Scripts.Battle
 
         private void Update()
         {
-            CheckLoose();
+            if (_isBattleProcess)
+            {
+                CheckLoose();
+            }
         }
 
         private void CreateEnemies()
@@ -146,9 +153,12 @@ namespace _Scripts.Battle
         } 
         private void EndGame(bool state)
         {
+            _isBattleProcess = false;
+            
             if (state)
             {
-                _winUI.SetActive(true);
+                _winUI.Show(_levels[User.Level].unlockUnit);
+                User.Level++;
             }
             else
             {
@@ -158,7 +168,6 @@ namespace _Scripts.Battle
 
         public void Restart()
         {
-            User.Level++;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

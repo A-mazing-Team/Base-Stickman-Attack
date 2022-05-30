@@ -13,25 +13,18 @@ namespace _Scripts.UnitSpawner
     {
         [SerializeField]
         private Brush _brush;
-
         [SerializeField]
-        private UnitBase _sniper;
-        [SerializeField]
-        private UnitBase _shooter;
-        [SerializeField]
-        private UnitBase _rocketLauncher;
-        [SerializeField]
-        private Humvee _humvee;
-
+        private Pistol _defaultSpawnedUnit;
+        
         private UnitBase _currentSpawnUnit;
+
 
         [Inject]
         private BattleManager _battleManager;
 
-
         private void Start()
         {
-            _currentSpawnUnit = _shooter;
+            _currentSpawnUnit = _defaultSpawnedUnit;
         }
 
         private void OnEnable()
@@ -42,11 +35,6 @@ namespace _Scripts.UnitSpawner
         private void OnDisable()
         {
             _brush.OnDeltaPassed -= Brush_OnOnDeltaPassed;
-        }
-
-        private void SetSpawnUnit(UnitBase unitBase)
-        {
-            _currentSpawnUnit = unitBase;
         }
 
         private void Brush_OnOnDeltaPassed(Vector3 position)
@@ -65,23 +53,10 @@ namespace _Scripts.UnitSpawner
             _battleManager.AddAlly(u);
         }
 
-        public void Sniper()
+       
+        public void SpawnedUnitChanged(UnitBase unitBase)
         {
-            _currentSpawnUnit = _sniper;
-        }
-        public void Shooter()
-        {
-            _currentSpawnUnit = _shooter;
-        }
-
-        public void RocketLauncher()
-        {
-            _currentSpawnUnit = _rocketLauncher;
-        }
-        
-        public void Humvee()
-        {
-            _currentSpawnUnit = _humvee;
+            _currentSpawnUnit = unitBase;
         }
     }
 }

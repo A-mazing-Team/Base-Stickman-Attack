@@ -5,6 +5,7 @@ namespace _Scripts.Managers
     [CreateAssetMenu]
     public class UnitConfig : ScriptableObject
     {
+        public Sprite image;
         public float cost;
         public float health;
         public float damage;

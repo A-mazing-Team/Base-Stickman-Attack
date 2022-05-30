@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
   m_Name: Base Config
   m_EditorClassIdentifier: 
-  cost: 0
+  image: {fileID: 0}
+  cost: 5
   health: 1000
   damage: 0
   speed: 0

@@ -48,6 +48,14 @@ namespace _Scripts.Battle
             }
         }
 
+        public int Balance
+        {
+            get
+            {
+                return _avaliableAllyUnitsCount - _instanceUnitsCounter;
+            }
+        }
+
         public bool HasAlly
         {
             get
@@ -124,7 +132,7 @@ namespace _Scripts.Battle
         {
             unit.IsMyTeam = true;
             _allies.Add(unit);
-            _instanceUnitsCounter++;
+            _instanceUnitsCounter+= unit.config.cost;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
         }
 

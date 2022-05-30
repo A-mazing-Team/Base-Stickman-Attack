@@ -6,7 +6,7 @@ namespace _Scripts.Managers
     public class UnitConfig : ScriptableObject
     {
         public Sprite image;
-        public float cost;
+        public int cost;
         public float health;
         public float damage;
         public float speed;

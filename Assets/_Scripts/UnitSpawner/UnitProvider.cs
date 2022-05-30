@@ -47,6 +47,11 @@ namespace _Scripts.UnitSpawner
 
         private void Spawn(Vector3 position)
         {
+            if (_currentSpawnUnit.config.cost > _battleManager.Balance)
+            {
+                return;
+            }
+            
             var u = Instantiate(_currentSpawnUnit, position, Quaternion.identity);
             u.IsMyTeam = true;
             u.Create(_battleManager);

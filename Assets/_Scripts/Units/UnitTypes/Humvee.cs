@@ -1,4 +1,5 @@
 using System;
+using _Scripts.Save;
 using UnityEngine;
 
 namespace _Scripts.Managers.UnitTypes
@@ -29,7 +30,7 @@ namespace _Scripts.Managers.UnitTypes
 
         protected override void Death()
         {
-            _linkedTurret.TakeDamage(_linkedTurret.config.health + 1);
+            _linkedTurret.TakeDamage(_linkedTurret.config.upgrades[User.GetUnitLevel(this)].health + 1);
             base.Death();
         }
 

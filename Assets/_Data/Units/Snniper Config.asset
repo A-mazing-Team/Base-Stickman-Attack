@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
   m_Name: Snniper Config
   m_EditorClassIdentifier: 
+  name: Sniper
   image: {fileID: 21300000, guid: 7b115a0c85587984aa02bc8011c38f96, type: 3}
   cost: 5
   health: 5
@@ -19,3 +20,4 @@ MonoBehaviour:
   speed: 2
   attackRange: 12
   attackDelay: 1
+  upgrades: []

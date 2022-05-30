@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
   m_Name: HumveeConfig
   m_EditorClassIdentifier: 
+  name: Humvee
   image: {fileID: 21300000, guid: 10f632e55cc21af47af39b26e77aa22e, type: 3}
   cost: 9
   health: 120

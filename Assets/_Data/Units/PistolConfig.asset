@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
   m_Name: PistolConfig
   m_EditorClassIdentifier: 
+  name: Pistol
   image: {fileID: 21300000, guid: cb5ecd169afa3cf4bb9fc924a2c7122e, type: 3}
   cost: 1
   health: 12

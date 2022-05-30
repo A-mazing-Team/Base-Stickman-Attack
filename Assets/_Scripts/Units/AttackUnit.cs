@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using _Scripts.Save;
 using ModestTree;
 using UnityEngine;
 
@@ -82,7 +83,7 @@ namespace _Scripts.Managers
         {
             _shootFx.Play();
             
-            if (_currentTarget != null && _currentTarget.TakeDamage(config.damage))
+            if (_currentTarget != null && _currentTarget.TakeDamage(config.upgrades[User.GetUnitLevel(this)].damage))
             {
                 SetTarget();
             }

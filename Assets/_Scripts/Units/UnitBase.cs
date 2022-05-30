@@ -3,6 +3,7 @@ using System.Linq;
 using _Scripts.Battle;
 using _Scripts.Levels;
 using _Scripts.MVC;
+using _Scripts.Save;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -51,7 +52,7 @@ namespace _Scripts.Managers
         {
             //_health = config.health;
             _battleManager = battleManager;
-            _health = config.health;
+            _health = config.upgrades[User.GetUnitLevel(this)].health;
             InitAdditionalData();
             _isPrepare = true;
         }

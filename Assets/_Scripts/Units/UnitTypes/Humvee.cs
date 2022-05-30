@@ -17,7 +17,7 @@ namespace _Scripts.Managers.UnitTypes
             SetTarget();
             
             
-            if (Vector3.Distance(_currentTarget.position, position) > config.attackRange)
+            if (_currentTarget!= null && Vector3.Distance(_currentTarget.position, position) > config.attackRange)
             {
                 MoveToUnit(_currentTarget);
             }
@@ -31,6 +31,13 @@ namespace _Scripts.Managers.UnitTypes
         {
             _linkedTurret.TakeDamage(_linkedTurret.config.health + 1);
             base.Death();
+        }
+
+        protected override void InitAdditionalData()
+        {
+            base.InitAdditionalData();
+            _linkedTurret.Create(_battleManager);
+            _linkedTurret.IsMyTeam = IsMyTeam;
         }
     }
 }

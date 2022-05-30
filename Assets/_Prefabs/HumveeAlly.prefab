@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3930925937354915866}
   - component: {fileID: 8714955985371438278}
-  - component: {fileID: 2729688912121229213}
+  - component: {fileID: 1923602070951798914}
   m_Layer: 0
-  m_Name: Humvee
+  m_Name: HumveeAlly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ NavMeshAgent:
   m_BaseOffset: 1.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2729688912121229213
+--- !u!114 &1923602070951798914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,11 +79,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3930925937354915866}
     m_Modifications:
-    - target: {fileID: 81379896379140337, guid: 46c3f526406724619bf76c1a4e98edf6,
+    - target: {fileID: 3290696074241817611, guid: 46c3f526406724619bf76c1a4e98edf6,
         type: 3}
-      propertyPath: _navMeshAgent
+      propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8714955985371438278}
+      objectReference: {fileID: 2100000, guid: 02474146981d8794b90184462af83ba3, type: 2}
+    - target: {fileID: 3671450520124311119, guid: 46c3f526406724619bf76c1a4e98edf6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 02474146981d8794b90184462af83ba3, type: 2}
     - target: {fileID: 5164519583571453760, guid: 46c3f526406724619bf76c1a4e98edf6,
         type: 3}
       propertyPath: m_RootOrder
@@ -144,8 +149,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Humvee (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6957882439013296386, guid: 46c3f526406724619bf76c1a4e98edf6, type: 3}
+    - target: {fileID: 5665139213312914149, guid: 46c3f526406724619bf76c1a4e98edf6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07bdc99439da6b4290773b8427474fd, type: 2}
+    - target: {fileID: 8519523789325104936, guid: 46c3f526406724619bf76c1a4e98edf6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e07bdc99439da6b4290773b8427474fd, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c3f526406724619bf76c1a4e98edf6, type: 3}
 --- !u!4 &5196484950491753319 stripped
 Transform:

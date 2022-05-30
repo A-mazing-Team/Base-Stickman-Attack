@@ -2,6 +2,7 @@ using System;
 using _Scripts.Battle;
 using _Scripts.Draw;
 using _Scripts.Managers;
+using _Scripts.Managers.UnitTypes;
 using _Scripts.MVC;
 using UnityEngine;
 using Zenject;
@@ -19,12 +20,19 @@ namespace _Scripts.UnitSpawner
         private UnitBase _shooter;
         [SerializeField]
         private UnitBase _rocketLauncher;
-        
+        [SerializeField]
+        private Humvee _humvee;
+
         private UnitBase _currentSpawnUnit;
 
         [Inject]
         private BattleManager _battleManager;
-        
+
+
+        private void Start()
+        {
+            _currentSpawnUnit = _shooter;
+        }
 
         private void OnEnable()
         {
@@ -52,6 +60,7 @@ namespace _Scripts.UnitSpawner
         private void Spawn(Vector3 position)
         {
             var u = Instantiate(_currentSpawnUnit, position, Quaternion.identity);
+            u.IsMyTeam = true;
             u.Create(_battleManager);
             _battleManager.AddAlly(u);
         }
@@ -68,6 +77,11 @@ namespace _Scripts.UnitSpawner
         public void RocketLauncher()
         {
             _currentSpawnUnit = _rocketLauncher;
+        }
+        
+        public void Humvee()
+        {
+            _currentSpawnUnit = _humvee;
         }
     }
 }

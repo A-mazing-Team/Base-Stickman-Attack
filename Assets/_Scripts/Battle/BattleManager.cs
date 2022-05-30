@@ -60,11 +60,6 @@ namespace _Scripts.Battle
 
         private void Start()
         {
-            if (User.Level + 1 > _levels.Length)
-            {
-                User.Level--;
-            }
-            
             CreateEnemies();
             _avaliableAllyUnitsCount = _levels[User.Level].allyUnitsCount;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
@@ -78,7 +73,7 @@ namespace _Scripts.Battle
         private void CreateEnemies()
         {
             _enemies = new List<UnitBase>();
-            
+
             var enemiesParent = Instantiate(_levels[User.Level].enemiesPrefab, Vector3.zero, Quaternion.identity);
 
             foreach (Transform enemy in enemiesParent.transform)
@@ -153,7 +148,6 @@ namespace _Scripts.Battle
         {
             if (state)
             {
-                User.Level++;
                 _winUI.SetActive(true);
             }
             else
@@ -164,6 +158,7 @@ namespace _Scripts.Battle
 
         public void Restart()
         {
+            User.Level++;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

@@ -4,7 +4,6 @@ namespace _Scripts.Managers.UnitTypes
     {
         protected override void Attack()
         {
-            base.Attack();
             OnAnimationShoot();
         }
 

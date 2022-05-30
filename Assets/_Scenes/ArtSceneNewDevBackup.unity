@@ -5918,7 +5918,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -6625,18 +6624,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930925937354915866, guid: bcb7b12342270498cbeba64c70c4ea0e,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930925937354915866, guid: bcb7b12342270498cbeba64c70c4ea0e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930925937354915866, guid: bcb7b12342270498cbeba64c70c4ea0e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930925937354915866, guid: bcb7b12342270498cbeba64c70c4ea0e,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.67629
+      value: -5.8
       objectReference: {fileID: 0}
     - target: {fileID: 3930925937354915866, guid: bcb7b12342270498cbeba64c70c4ea0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.43
+      value: -11.49
       objectReference: {fileID: 0}
     - target: {fileID: 3930925937354915866, guid: bcb7b12342270498cbeba64c70c4ea0e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -45.09
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 3930925937354915866, guid: bcb7b12342270498cbeba64c70c4ea0e,
         type: 3}
@@ -6677,6 +6691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Humvee
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371245639193043939, guid: bcb7b12342270498cbeba64c70c4ea0e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb7b12342270498cbeba64c70c4ea0e, type: 3}
@@ -12107,7 +12126,6 @@ TrailRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0

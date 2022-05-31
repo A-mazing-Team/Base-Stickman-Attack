@@ -4,13 +4,15 @@ using _Scripts.Battle;
 using _Scripts.Levels;
 using _Scripts.MVC;
 using _Scripts.Save;
+using QFSW.MOP2;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace _Scripts.Managers
 {
-    public abstract class UnitBase : MonoBehaviour
+    public abstract class UnitBase : PoolableMonoBehaviour
     {
         public event Action OnDeath = null;
         public Vector3 position => transform.position;
@@ -25,10 +27,21 @@ namespace _Scripts.Managers
 
         protected bool _isPrepare;
         
+        protected ObjectPool _bulletPool;
+        
 
         //######STATS#######
         protected float _health;
 
+        private void OnEnable()
+        {
+            SceneManager.sceneUnloaded += ResetPool;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneUnloaded -= ResetPool;
+        }
 
         // true ==  target death
         public bool TakeDamage(float damage)
@@ -53,6 +66,7 @@ namespace _Scripts.Managers
             //_health = config.health;
             _battleManager = battleManager;
             _health = config.upgrades[User.GetUnitLevel(this.config)].health;
+            _bulletPool = config.bulletPool;
             InitAdditionalData();
             _isPrepare = true;
         }
@@ -62,6 +76,21 @@ namespace _Scripts.Managers
             OnDeath?.Invoke();
             _battleManager.OnUnitDeath(this);
             this.gameObject.SetActive(false);
+
+            ResetPool();
+        }
+
+        private void ResetPool()
+        {
+            if (config.unitPool != null && IsMyTeam)
+            {
+                Release();
+            }
+        }
+        
+        private void ResetPool(Scene scene)
+        {
+            ResetPool();
         }
 
         protected virtual void InitAdditionalData()

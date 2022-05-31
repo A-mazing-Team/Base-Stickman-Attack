@@ -15,9 +15,11 @@ MonoBehaviour:
   name: Pistol
   image: {fileID: 21300000, guid: cb5ecd169afa3cf4bb9fc924a2c7122e, type: 3}
   cost: 1
+  unitPool: {fileID: 11400000, guid: b6c50fbec6590483eb06054718a68d8a, type: 2}
   speed: 3
   attackRange: 7
   attackDelay: 0.5
+  bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   upgrades:
   - health: 100
     damage: 5

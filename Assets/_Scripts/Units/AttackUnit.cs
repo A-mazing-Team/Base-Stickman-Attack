@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using _Scripts.Save;
 using ModestTree;
+using QFSW.MOP2;
 using UnityEngine;
 
 namespace _Scripts.Managers
@@ -10,12 +11,10 @@ namespace _Scripts.Managers
     {
         [SerializeField]
         protected ParticleSystem _shootFx;
-        [SerializeField]
-        private Bullet _bulletPrefab;
-        
+
         [SerializeField]
         private Transform _shootPosition;
-
+        
         private float _nextShootTime;
 
         protected virtual void Update()
@@ -98,9 +97,10 @@ namespace _Scripts.Managers
                 return;
             }
             
-            var bullet = Instantiate(_bulletPrefab, _shootPosition.position, Quaternion.Euler(-90,0,0));
+            var bullet = _bulletPool.GetObjectComponent<Bullet>(_shootPosition.position, Quaternion.Euler(-90,0,0));
             bullet.Shoot(_currentTarget.transform);
         }
+        
     }
     
 }

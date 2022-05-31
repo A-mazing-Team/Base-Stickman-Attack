@@ -18,6 +18,7 @@ MonoBehaviour:
   speed: 5
   attackRange: 11
   attackDelay: 0.3
+  bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   upgrades:
   - health: 100
     damage: 5

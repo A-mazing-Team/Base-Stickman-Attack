@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level1 4
   m_EditorClassIdentifier: 
   allyUnitsCount: 120
-  enemiesPrefab: {fileID: 8441777506103110476, guid: 993c28dad730147128f714242376acd3,
+  enemiesPrefab: {fileID: 3443566573932411061, guid: fa86a81ed01424614bcdd56d12b78853,
     type: 3}
   unlockUnit: {fileID: 11400000, guid: 1ae4ae51e0d664f408d89c7f94b3d07d, type: 2}

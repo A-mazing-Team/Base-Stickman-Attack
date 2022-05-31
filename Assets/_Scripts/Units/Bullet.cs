@@ -1,6 +1,7 @@
+using QFSW.MOP2;
 using UnityEngine;
 
-public class Bullet: MonoBehaviour
+public class Bullet: PoolableMonoBehaviour
 {
     [SerializeField]
     private float _bulletSpeed = 15f;
@@ -18,16 +19,12 @@ public class Bullet: MonoBehaviour
             Vector3 targetPosition = _target.position + Vector3.up;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, _bulletSpeed * Time.deltaTime);
             Rotate(targetPosition);
-                 
-            if (!_target.gameObject.activeSelf)
+
+            if (Vector3.Distance(transform.position ,targetPosition) < 0.2f || !_target.gameObject.activeSelf)
             {
-                gameObject.SetActive(false);
-            }
-                 
-            if (transform.position == _target.position)
-            {
+                Release();
+                Reset();
                 _target = null;
-                gameObject.SetActive(false);
             }
         }
             
@@ -40,4 +37,7 @@ public class Bullet: MonoBehaviour
             
         transform.rotation = rotation;
     }
+    
+    protected virtual void Reset(){}
+    
 }

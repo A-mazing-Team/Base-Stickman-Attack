@@ -15,9 +15,11 @@ MonoBehaviour:
   name: Sniper
   image: {fileID: 21300000, guid: 7b115a0c85587984aa02bc8011c38f96, type: 3}
   cost: 5
+  unitPool: {fileID: 11400000, guid: ba12411f8a5274ea2bcfcc98946d20f0, type: 2}
   speed: 2
   attackRange: 12
   attackDelay: 1
+  bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   upgrades:
   - health: 100
     damage: 5

@@ -4,6 +4,7 @@ using _Scripts.Draw;
 using _Scripts.Managers;
 using _Scripts.Managers.UnitTypes;
 using _Scripts.MVC;
+using QFSW.MOP2;
 using UnityEngine;
 using Zenject;
 
@@ -15,12 +16,13 @@ namespace _Scripts.UnitSpawner
         private Brush _brush;
         [SerializeField]
         private Pistol _defaultSpawnedUnit;
-        
-        private UnitBase _currentSpawnUnit;
 
 
         [Inject]
         private BattleManager _battleManager;
+
+        private UnitBase _currentSpawnUnit;
+
 
         private void Start()
         {
@@ -52,7 +54,7 @@ namespace _Scripts.UnitSpawner
                 return;
             }
             
-            var u = Instantiate(_currentSpawnUnit, position, Quaternion.identity);
+            var u = _currentSpawnUnit.config.unitPool.GetObjectComponent<UnitBase>(position, Quaternion.identity);
             u.IsMyTeam = true;
             u.Create(_battleManager);
             _battleManager.AddAlly(u);

@@ -5,8 +5,11 @@ namespace _Scripts.Save
 {
     public static class User
     {
+        private const int MaxBattleDeckCount = 4;
         private const string LevelDataName = "Level";
-        private const string UnitLevelDataName = "Level";
+        private const string UnitLevelDataName = "UnitLevel";
+        private const string BattleDeckData = "Level";
+        
 
         public static int Level
         {
@@ -22,14 +25,36 @@ namespace _Scripts.Save
             } 
         }
 
-        public static int GetUnitLevel(UnitBase unitBase)
+        public static int GetUnitLevel(UnitConfig config)
         {
-            return PlayerPrefs.GetInt(UnitLevelDataName + unitBase.config.name, 0);
+            return PlayerPrefs.GetInt(UnitLevelDataName + config.name, 0);
         }
 
-        public static void SetUnitLevel(UnitBase unitBase, int level)
+        public static void SetUnitLevel(UnitConfig config, int level)
         {
-            PlayerPrefs.SetInt(UnitLevelDataName + unitBase.config.name, level);
+            PlayerPrefs.SetInt(UnitLevelDataName + config.name, level);
+        }
+        
+        
+
+        public static string[] GetBattleDeckUnitNames()
+        {
+            string[] names = new string[MaxBattleDeckCount];
+            
+            for (int i = 0; i < MaxBattleDeckCount; i++)
+            {
+                names[i] = PlayerPrefs.GetString(BattleDeckData + i.ToString());
+            }
+
+            return names;
+        }
+
+        public static void UpdateBattleDeck(UnitConfig[] updatedUnits)
+        {
+            for (int i = 0; i < MaxBattleDeckCount; i++)
+            {
+                PlayerPrefs.SetString(BattleDeckData + i.ToString(), updatedUnits[i].name);
+            }
         }
         
     }

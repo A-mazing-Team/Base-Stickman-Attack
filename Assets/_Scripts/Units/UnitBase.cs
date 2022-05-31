@@ -52,7 +52,7 @@ namespace _Scripts.Managers
         {
             //_health = config.health;
             _battleManager = battleManager;
-            _health = config.upgrades[User.GetUnitLevel(this)].health;
+            _health = config.upgrades[User.GetUnitLevel(this.config)].health;
             InitAdditionalData();
             _isPrepare = true;
         }

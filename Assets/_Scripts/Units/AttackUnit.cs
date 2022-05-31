@@ -83,7 +83,7 @@ namespace _Scripts.Managers
         {
             _shootFx.Play();
             
-            if (_currentTarget != null && _currentTarget.TakeDamage(config.upgrades[User.GetUnitLevel(this)].damage))
+            if (_currentTarget != null && _currentTarget.TakeDamage(config.upgrades[User.GetUnitLevel(this.config)].damage))
             {
                 SetTarget();
             }

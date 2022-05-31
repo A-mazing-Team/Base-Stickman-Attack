@@ -29,7 +29,7 @@ namespace _Scripts.Managers
                 return;
             }
             
-            _modelBase.maxHealth = config.upgrades[User.GetUnitLevel(this)].health;
+            _modelBase.maxHealth = config.upgrades[User.GetUnitLevel(this.config)].health;
         }
 
         protected override void Death()

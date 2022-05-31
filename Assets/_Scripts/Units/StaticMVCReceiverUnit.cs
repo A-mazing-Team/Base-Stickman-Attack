@@ -17,7 +17,7 @@ namespace _Scripts.Managers
 
         protected override void InitAdditionalData()
         {
-            _modelBase.maxHealth = config.upgrades[User.GetUnitLevel(this)].health;
+            _modelBase.maxHealth = config.upgrades[User.GetUnitLevel(this.config)].health;
         }
         
         protected override void Death()

@@ -30,7 +30,7 @@ namespace _Scripts.Managers.UnitTypes
 
         protected override void Death()
         {
-            _linkedTurret.TakeDamage(_linkedTurret.config.upgrades[User.GetUnitLevel(this)].health + 1);
+            _linkedTurret.TakeDamage(_linkedTurret.config.upgrades[User.GetUnitLevel(this.config)].health + 1);
             base.Death();
         }
 

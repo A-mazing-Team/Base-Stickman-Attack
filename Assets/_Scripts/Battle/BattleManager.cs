@@ -167,6 +167,7 @@ namespace _Scripts.Battle
             {
                 _winUI.Show(_levels[User.Level].unlockUnit);
                 User.Level++;
+                User.SetUnitToNextLevel(_base.config);
             }
             else
             {

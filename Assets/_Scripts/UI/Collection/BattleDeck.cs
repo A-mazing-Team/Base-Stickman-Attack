@@ -71,7 +71,7 @@ namespace _Scripts.UI.Collection
             _currentCollectionSelected = null;
             _currentDeckSelected = null;
             
-            User.UpdateBattleDeck();
+            //User.UpdateBattleDeck();
         }
     }
 }

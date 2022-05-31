@@ -15,8 +15,9 @@ MonoBehaviour:
   name: Shooter
   image: {fileID: 21300000, guid: 983dc110c29707748922e81e0c88a698, type: 3}
   cost: 2
-  health: 20
-  damage: 5
   speed: 1
   attackRange: 8
   attackDelay: 0.3
+  upgrades:
+  - health: 100
+    damage: 5

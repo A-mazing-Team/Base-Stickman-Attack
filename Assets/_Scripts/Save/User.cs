@@ -30,9 +30,10 @@ namespace _Scripts.Save
             return PlayerPrefs.GetInt(UnitLevelDataName + config.name, 0);
         }
 
-        public static void SetUnitLevel(UnitConfig config, int level)
+        public static void SetUnitToNextLevel(UnitConfig config)
         {
-            PlayerPrefs.SetInt(UnitLevelDataName + config.name, level);
+            int level = GetUnitLevel(config);
+            PlayerPrefs.SetInt(UnitLevelDataName + config.name, level + 1);
         }
         
         

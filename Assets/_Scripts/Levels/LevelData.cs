@@ -10,5 +10,7 @@ namespace _Scripts.Levels
         public int allyUnitsCount;
         public GameObject enemiesPrefab;
         public UnitConfig unlockUnit;
+        public int goldReward;
+        public UnitConfig[] deckUnitNames;
     }
 }

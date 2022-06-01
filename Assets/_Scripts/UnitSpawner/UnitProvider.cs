@@ -23,6 +23,8 @@ namespace _Scripts.UnitSpawner
 
         private UnitBase _currentSpawnUnit;
 
+        private bool _canSpawn = false;
+
 
         private void Start()
         {
@@ -49,7 +51,7 @@ namespace _Scripts.UnitSpawner
 
         private void Spawn(Vector3 position)
         {
-            if (_currentSpawnUnit.config.cost > _battleManager.Balance)
+            if (_currentSpawnUnit.config.cost > _battleManager.Balance || !_canSpawn)
             {
                 return;
             }
@@ -64,6 +66,11 @@ namespace _Scripts.UnitSpawner
         public void SpawnedUnitChanged(UnitBase unitBase)
         {
             _currentSpawnUnit = unitBase;
+        }
+
+        public void CanSpan(bool state)
+        {
+            _canSpawn = state;
         }
     }
 }

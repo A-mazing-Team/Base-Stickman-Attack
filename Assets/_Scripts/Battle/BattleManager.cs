@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Levels;
 using _Scripts.Managers;
@@ -31,6 +32,9 @@ namespace _Scripts.Battle
         [SerializeField]
         private UnitBase[] _staticEnemiesUnits;
 
+        [SerializeField]
+        private UnitsScrollController _unitsScroll;
+
 
         private List<UnitBase> _allies;
 
@@ -39,6 +43,8 @@ namespace _Scripts.Battle
         private int _instanceUnitsCounter;
 
         private bool _isBattleProcess;
+
+        private bool _isBattleStarted = false;
 
         public bool CanSpawnAlly
         {
@@ -71,10 +77,13 @@ namespace _Scripts.Battle
 
         private void Start()
         {
+            User.UpdateBattleDeck(_levels[User.Level].deckUnitNames);
+            
             _isBattleProcess = true;
             CreateEnemies();
             _avaliableAllyUnitsCount = _levels[User.Level].allyUnitsCount;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
+            _unitsScroll.InitializeCards(false);
         }
 
         private void Update()
@@ -130,6 +139,11 @@ namespace _Scripts.Battle
 
         public void AddAlly(UnitBase unit)
         {
+            if (!_isBattleStarted)
+            {
+                _isBattleStarted = true;
+            }
+            
             unit.IsMyTeam = true;
             _allies.Add(unit);
             _instanceUnitsCounter+= unit.config.cost;
@@ -165,7 +179,9 @@ namespace _Scripts.Battle
             
             if (state)
             {
-                _winUI.Show(_levels[User.Level].unlockUnit);
+                StartCoroutine(EndRoutine());
+                
+                User.Balance += _levels[User.Level].goldReward;
                 User.Level++;
                 User.SetUnitToNextLevel(_base.config);
             }
@@ -178,6 +194,13 @@ namespace _Scripts.Battle
         public void Restart()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+
+        private IEnumerator EndRoutine()
+        {
+            yield return new WaitForSeconds(3f);
+            _winUI.Show(_levels[User.Level].unlockUnit);
         }
     }
 }

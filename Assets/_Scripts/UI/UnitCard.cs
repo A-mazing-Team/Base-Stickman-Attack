@@ -1,7 +1,9 @@
 using System;
 using _Scripts.Battle;
 using _Scripts.Managers;
+using _Scripts.Save;
 using _Scripts.UnitSpawner;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -10,32 +12,58 @@ namespace _Scripts.UI
 {
     public class UnitCard : MonoBehaviour
     {
+        [HideInInspector]
+        public UnitBase unitBase;
+
         [SerializeField]
-        private UnitBase _unitBase;
+        private Image _unitIcon;
+
         [SerializeField]
         private Button _button;
+
         [SerializeField]
         private Outline _outline;
 
-        public bool isActive;
+        [SerializeField]
+        private TextMeshProUGUI _upgradeCostLabel;
 
-        [Inject]
-        private UnitProvider _unitProvider;
+        [SerializeField]
+        private GameObject _group;
 
-        public void Init(Action<UnitCard> callback)
+        
+
+
+        public void Refresh(UnitBase unit, Action<UnitCard> callback, bool isBattleRefresh)
         {
-            _button.onClick.AddListener((() =>
+            unitBase = unit;
+            _unitIcon.sprite = unit.config.image;
+
+            _group.gameObject.SetActive(!isBattleRefresh);
+            _upgradeCostLabel.gameObject.SetActive(!isBattleRefresh);
+
+
+            if (!isBattleRefresh)
             {
-                ChangeState(true);
-                _unitProvider.SpawnedUnitChanged(_unitBase);
-                callback?.Invoke(this);
-            }));
+                _upgradeCostLabel.text =
+                    unitBase.config.upgrades[User.GetUnitLevel(unitBase.config) + 1].upgradeCost.ToString();
+                
+                bool canUpgrade = unitBase.config.upgrades[User.GetUnitLevel(unitBase.config) + 1].upgradeCost < User.Balance;
+
+                _upgradeCostLabel.color = canUpgrade ? Color.white : Color.red;
+            }
+
+
+            _button.onClick.AddListener((() => { callback?.Invoke(this); }));
         }
 
         public void ChangeState(bool on)
         {
-            isActive = on;
             _outline.enabled = on;
+        }
+
+        private void Reset()
+        {
+            
         }
     }
 }

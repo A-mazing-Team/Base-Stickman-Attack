@@ -17,6 +17,8 @@ namespace _Scripts.Draw
 
         private Vector3 _previousPosition = Vector3.zero;
 
+        private bool _canDraw = false;
+
         private void Start()
         {
             _trailRenderer.gameObject.SetActive(false);
@@ -24,6 +26,11 @@ namespace _Scripts.Draw
 
         private void Update()
         {
+            if (!_canDraw)
+            {
+                return;
+            }
+            
             Draw();
             Clear();
         }
@@ -78,7 +85,11 @@ namespace _Scripts.Draw
             newPosition.y = _height;
             return newPosition;
         }
-        
+
+        public void CanDraw(bool state)
+        {
+            _canDraw = state;
+        }
         
     }
 }

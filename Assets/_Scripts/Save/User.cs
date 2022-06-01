@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Managers;
 using UnityEngine;
 
@@ -5,11 +6,15 @@ namespace _Scripts.Save
 {
     public static class User
     {
+        public static event Action BalanceChanged = null;
+        
         private const int MaxBattleDeckCount = 4;
         private const string LevelDataName = "Level";
         private const string UnitLevelDataName = "UnitLevel";
-        private const string BattleDeckData = "Level";
-        
+        private const string BattleDeckData = "Deck";
+        private const string BalanceDataName = "Balance";
+        private const string DecklenghtData = "DeckLenght";
+
 
         public static int Level
         {
@@ -22,6 +27,17 @@ namespace _Scripts.Save
                     value = 4;
                 }
                 PlayerPrefs.SetInt(LevelDataName, value);
+            } 
+        }
+
+        public static int Balance
+        {
+            get => PlayerPrefs.GetInt(BalanceDataName, 0);
+            
+            set
+            {
+                PlayerPrefs.SetInt(BalanceDataName, value);
+                BalanceChanged?.Invoke();
             } 
         }
 
@@ -40,9 +56,11 @@ namespace _Scripts.Save
 
         public static string[] GetBattleDeckUnitNames()
         {
-            string[] names = new string[MaxBattleDeckCount];
+            int lenght = PlayerPrefs.GetInt(DecklenghtData);
             
-            for (int i = 0; i < MaxBattleDeckCount; i++)
+            string[] names = new string[lenght];
+            
+            for (int i = 0; i < lenght; i++)
             {
                 names[i] = PlayerPrefs.GetString(BattleDeckData + i.ToString());
             }
@@ -52,10 +70,12 @@ namespace _Scripts.Save
 
         public static void UpdateBattleDeck(UnitConfig[] updatedUnits)
         {
-            for (int i = 0; i < MaxBattleDeckCount; i++)
+            for (int i = 0; i < updatedUnits.Length; i++)
             {
                 PlayerPrefs.SetString(BattleDeckData + i.ToString(), updatedUnits[i].name);
             }
+            
+            PlayerPrefs.SetInt(DecklenghtData, updatedUnits.Length);
         }
         
     }

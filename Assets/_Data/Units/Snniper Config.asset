@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
   m_Name: Snniper Config
   m_EditorClassIdentifier: 
+  prefab: {fileID: 5854529095287720397, guid: 0d97adda6461640b8b871a947b8fb451, type: 3}
   name: Sniper
   image: {fileID: 21300000, guid: 7b115a0c85587984aa02bc8011c38f96, type: 3}
   cost: 5
@@ -21,5 +22,15 @@ MonoBehaviour:
   attackDelay: 1
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   upgrades:
-  - health: 100
+  - upgradeCost: 0
+    health: 100
+    damage: 5
+  - upgradeCost: 10
+    health: 100
+    damage: 5
+  - upgradeCost: 20
+    health: 100
+    damage: 5
+  - upgradeCost: 20
+    health: 100
     damage: 5

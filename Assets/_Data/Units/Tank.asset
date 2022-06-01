@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
-  m_Name: HumveeConfig
+  m_Name: Tank
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1923602070951798914, guid: 782d11d2862b449968f426b9e8c57693, type: 3}
-  name: Humvee
-  image: {fileID: 21300000, guid: 10f632e55cc21af47af39b26e77aa22e, type: 3}
+  prefab: {fileID: 4188324282536027244, guid: 854b6c92a95554d3e8fbbccb3ff078c5, type: 3}
+  name: Tank
+  image: {fileID: 21300000, guid: 60912207fd811c54a916525af286a67f, type: 3}
   cost: 9
-  unitPool: {fileID: 11400000, guid: 31e465c78df554c40a0dd9c64ace8475, type: 2}
+  unitPool: {fileID: 11400000, guid: 0fdae1a947f9740e8856554e18fe3243, type: 2}
   speed: 5
   attackRange: 10
   attackDelay: 0.4
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   upgrades:
   - upgradeCost: 0
-    health: 100
+    health: 10000
     damage: 5
   - upgradeCost: 10
-    health: 100
+    health: 10000
     damage: 5
   - upgradeCost: 20
-    health: 100
+    health: 100000
     damage: 5
-  - upgradeCost: 0
-    health: 100
+  - upgradeCost: 20
+    health: 100000
     damage: 5

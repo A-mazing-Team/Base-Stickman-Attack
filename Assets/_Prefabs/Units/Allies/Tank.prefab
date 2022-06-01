@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dce945ce319409f9e103a3f5e64d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parentPool: {fileID: 0}
+  _parentPool: {fileID: 11400000, guid: 0fdae1a947f9740e8856554e18fe3243, type: 2}
   config: {fileID: 11400000, guid: 2da3e7232ecc84d6fa057cc9e3f571cc, type: 2}
   IsMyTeam: 0
   _navMeshAgent: {fileID: 0}
@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d730a7044b48719bdbfac0fdf447c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parentPool: {fileID: 0}
-  config: {fileID: 11400000, guid: 1ae4ae51e0d664f408d89c7f94b3d07d, type: 2}
+  _parentPool: {fileID: 11400000, guid: 0fdae1a947f9740e8856554e18fe3243, type: 2}
+  config: {fileID: 11400000, guid: 0608f31b199d242f694b9a9855b33bbd, type: 2}
   IsMyTeam: 0
   _navMeshAgent: {fileID: 604656106932722502}
   _animator: {fileID: 0}

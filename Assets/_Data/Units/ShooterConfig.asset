@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
   m_Name: ShooterConfig
   m_EditorClassIdentifier: 
+  prefab: {fileID: 4990619294910281106, guid: e75fc94315d294376ab5879e71176048, type: 3}
   name: Shooter
   image: {fileID: 21300000, guid: 983dc110c29707748922e81e0c88a698, type: 3}
   cost: 2
@@ -21,5 +22,15 @@ MonoBehaviour:
   attackDelay: 0.3
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   upgrades:
-  - health: 100
+  - upgradeCost: 34
+    health: 100
+    damage: 5
+  - upgradeCost: 56
+    health: 100
+    damage: 5
+  - upgradeCost: 78
+    health: 100
+    damage: 5
+  - upgradeCost: 78
+    health: 100
     damage: 5

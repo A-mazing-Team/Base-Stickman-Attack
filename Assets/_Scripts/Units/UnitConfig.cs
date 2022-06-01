@@ -7,6 +7,7 @@ namespace _Scripts.Managers
     [CreateAssetMenu]
     public class UnitConfig : ScriptableObject
     {
+        public UnitBase prefab;
         public string name;
         public Sprite image;
         public int cost;

@@ -25,7 +25,7 @@ namespace _Scripts.Save
 
         public static int Level
         {
-            get => PlayerPrefs.GetInt(LevelDataName, 9);
+            get => PlayerPrefs.GetInt(LevelDataName, 0);
             set
             {
                 PlayerPrefs.SetInt(LevelDataName, value);

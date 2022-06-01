@@ -83,9 +83,10 @@ namespace _Scripts.Managers
         {
             _shootFx.Play();
 
+            float delta = (config.damage * config.damageMultiplier) - config.damage;
+            
             if (_currentTarget != null &&
-                _currentTarget.TakeDamage((int)( config.damage * config.damageMultiplier *
-                                          User.GetUpgradeLevel(UpgradeType.Damage))))
+                _currentTarget.TakeDamage((int)(delta * User.GetUpgradeLevel(UpgradeType.Damage) + config.damage)))
             {
                 SetTarget();
             }

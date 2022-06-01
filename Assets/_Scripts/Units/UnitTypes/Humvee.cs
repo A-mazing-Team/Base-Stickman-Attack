@@ -32,8 +32,8 @@ namespace _Scripts.Managers.UnitTypes
 
         protected override void Death()
         {
-            _linkedTurret.TakeDamage(_linkedTurret.config.health * _linkedTurret.config.healthMultiplier *
-                User.GetUpgradeLevel(UpgradeType.Health) + 1);
+            float delta = (config.health * config.healthMultiplier) - config.health;
+            _linkedTurret.TakeDamage((int)(delta * User.GetUpgradeLevel(UpgradeType.Health) + 1) + config.health);
             base.Death();
         }
 

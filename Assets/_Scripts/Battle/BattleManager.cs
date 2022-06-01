@@ -9,6 +9,7 @@ using _Scripts.MVC;
 using _Scripts.PlayerBase;
 using _Scripts.Save;
 using _Scripts.UI;
+using _Scripts.Upgrades;
 using ModestTree;
 using TMPro;
 using UnityEngine;
@@ -58,6 +59,15 @@ namespace _Scripts.Battle
         [HideInInspector]
         public float rewardMultiplier;
 
+        public int ResultReward
+        {
+            get
+            {
+                float delta = (_levels[User.Level].goldReward * rewardMultiplier) - _levels[User.Level].goldReward;
+                return (int) (delta * User.GetUpgradeLevel(UpgradeType.Income)) +
+                       _levels[User.Level].goldReward;
+            }
+        }
         public bool CanSpawnAlly
         {
             get
@@ -217,8 +227,10 @@ namespace _Scripts.Battle
             if (state)
             {
                 StartCoroutine(EndRoutine(User.Level));
+
+
+                User.Balance += ResultReward;
                 
-                User.Balance += (int)rewardMultiplier * _levels[User.Level].goldReward;
                 if (_levels.Length - 1 != User.Level)
                 {
                     User.Level++;
@@ -241,7 +253,12 @@ namespace _Scripts.Battle
         private IEnumerator EndRoutine(int prevLevel)
         {
             yield return new WaitForSeconds(3.5f);
-            _winUI.Show(_levels[prevLevel].unlockUnit, _levels[prevLevel].lockPercent, (int)rewardMultiplier * _levels[prevLevel].goldReward);
+            
+            float delta = (_levels[prevLevel].goldReward * rewardMultiplier) - _levels[prevLevel].goldReward;
+            int result = (int) (delta * User.GetUpgradeLevel(UpgradeType.Income)) +
+                   _levels[prevLevel].goldReward;
+            
+            _winUI.Show(_levels[prevLevel].unlockUnit, _levels[prevLevel].lockPercent, result);
         }
 
         private IEnumerator PassiveAddUnit()

@@ -1,5 +1,7 @@
 using System;
 using _Scripts.Managers;
+using _Scripts.Save;
+using _Scripts.Upgrades;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,7 +25,9 @@ namespace _Scripts.MVC
         {
             if (_unitBase != null)
             {
-                _image.fillAmount = _unitBase.CurrentHealth / _unitBase.config.health;
+                float delta = (_unitBase.config.health * _unitBase.config.healthMultiplier) - _unitBase.config.health;
+                
+                _image.fillAmount = _unitBase.CurrentHealth / ((User.GetUpgradeLevel(UpgradeType.Health) * delta) + _unitBase.config.health);
                 transform.position =  Camera.main.WorldToScreenPoint(_unitBase.position) + _offset;
             }
         }

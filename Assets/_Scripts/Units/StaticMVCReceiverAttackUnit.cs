@@ -29,8 +29,8 @@ namespace _Scripts.Managers
             {
                 return;
             }
-            
-            _modelBase.maxHealth = config.health * config.healthMultiplier * User.GetUpgradeLevel(UpgradeType.Health);
+            float delta = (config.health * config.healthMultiplier) - config.health;
+            _modelBase.maxHealth = (int) (delta * User.GetUpgradeLevel(UpgradeType.Health) + config.health);
         }
 
         protected override void Death()

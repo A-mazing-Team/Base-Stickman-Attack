@@ -68,7 +68,9 @@ namespace _Scripts.Managers
         {
             //_health = config.health;
             _battleManager = battleManager;
-            _health = config.health * config.healthMultiplier * User.GetUpgradeLevel(UpgradeType.Health);
+            float delta = (config.health * config.healthMultiplier) - config.health;
+            _health = (int) (delta * User.GetUpgradeLevel(UpgradeType.Health) + config.health);
+
             _bulletPool = config.bulletPool;
             InitAdditionalData();
             _isPrepare = true;

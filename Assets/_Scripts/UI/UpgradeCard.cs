@@ -23,15 +23,18 @@ namespace _Scripts.UI
         [SerializeField]
         private int _baseCost;
         [SerializeField]
-        private float _multiplier;
-        [SerializeField]
         private float _costMultiplier;
 
         [Inject]
         private BattleManager _battleManager;
 
-        private float Cost => _baseCost * (User.GetUpgradeLevel(_upgradeType) + 1) * _costMultiplier;
+        private float Delta => (_baseCost * _costMultiplier) - _baseCost;
+        private float Cost => Delta * ((User.GetUpgradeLevel(_upgradeType) + 1)) + _baseCost;
         private bool CanUpgrade => Cost < User.Balance;
+
+        [Header("ONLY FOR INCOME MULTIPLIER")]
+        [SerializeField]
+        private float _incomeMultiplier;
 
         private void Start()
         {
@@ -50,7 +53,7 @@ namespace _Scripts.UI
 
             if (_upgradeType == UpgradeType.Income)
             {
-                _battleManager.rewardMultiplier = User.GetUpgradeLevel(UpgradeType.Income) * _multiplier;
+                _battleManager.rewardMultiplier = _incomeMultiplier;
             }
         }
 

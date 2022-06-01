@@ -14,6 +14,8 @@ namespace _Scripts.CameraMove
         private Vector3 _cameraPosition = Vector3.zero;
         private Vector3 _startPosition = Vector3.zero;
 
+        private bool _canMove;
+
         private void Start()
         {
             _startPosition = transform.position;
@@ -21,6 +23,11 @@ namespace _Scripts.CameraMove
 
         private void Update()
         {
+            if (!_canMove)
+            {
+                return;
+            }
+            
             if (Input.GetMouseButtonDown(0))
             {
                 SetHitPoint();
@@ -76,6 +83,11 @@ namespace _Scripts.CameraMove
                     _cameraPosition = transform.position;
                 }
             }
+        }
+
+        public void CanMove(bool canMove)
+        {
+            _canMove = canMove;
         }
         
     }

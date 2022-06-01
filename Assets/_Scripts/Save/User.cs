@@ -25,14 +25,9 @@ namespace _Scripts.Save
 
         public static int Level
         {
-            get => PlayerPrefs.GetInt(LevelDataName, 0);
+            get => PlayerPrefs.GetInt(LevelDataName, 9);
             set
             {
-                //TODO:DELETE
-                if (value == 5)
-                {
-                    value = 4;
-                }
                 PlayerPrefs.SetInt(LevelDataName, value);
             } 
         }
@@ -51,18 +46,19 @@ namespace _Scripts.Save
 
         public static void AddUpgradeLevel(UpgradeType upgradeType)
         {
+            int lvl = GetUpgradeLevel(upgradeType);
             switch (upgradeType)
             {
                 case UpgradeType.Damage:
-                    PlayerPrefs.SetInt(DamageData, GetUpgradeLevel(upgradeType) + 1);
+                    PlayerPrefs.SetInt(DamageData, lvl + 1);
                     break;
                 
                 case UpgradeType.Health:
-                    PlayerPrefs.SetInt(HealthData, GetUpgradeLevel(upgradeType) + 1);
+                    PlayerPrefs.SetInt(HealthData, lvl + 1);
                     break;
                 
                 case UpgradeType.Income:
-                    PlayerPrefs.SetInt(IncomeData, GetUpgradeLevel(upgradeType) + 1);
+                    PlayerPrefs.SetInt(IncomeData, lvl + 1);
                     break;
             }
         }

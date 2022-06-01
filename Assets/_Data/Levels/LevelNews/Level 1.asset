@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b1a049df774d9c96c5f004fffe1740, type: 3}
+  m_Name: Level 1
+  m_EditorClassIdentifier: 
+  baseHp: 100
+  allyUnitsCount: 1000
+  enemiesPrefab: {fileID: 1888037807651532644, guid: fa86a81ed01424614bcdd56d12b78853,
+    type: 3}
+  unlockUnit: {fileID: 11400000, guid: 15c6dd875575d4b74b60c91c2d2a2b3b, type: 2}
+  goldReward: 10
+  deckUnitNames:
+  - {fileID: 11400000, guid: 2a08b9580cd36467e96f6702bc1537ff, type: 2}
+  - {fileID: 11400000, guid: 1ae4ae51e0d664f408d89c7f94b3d07d, type: 2}
+  - {fileID: 11400000, guid: 0608f31b199d242f694b9a9855b33bbd, type: 2}
+  lockPercent: 90

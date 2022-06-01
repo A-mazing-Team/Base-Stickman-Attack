@@ -16,8 +16,11 @@ namespace _Scripts.UI
         private GameObject _completeGroup;
         [SerializeField]
         private TextMeshProUGUI _unlockPercentLabel;
+
+        [SerializeField]
+        private TextMeshProUGUI _goldValueLabel;
         
-        public void Show(UnitConfig unlockUnit, int unlockPercent)
+        public void Show(UnitConfig unlockUnit, int unlockPercent, int gold)
         {
             gameObject.SetActive(true);
             _completeGroup.SetActive(unlockUnit != null);
@@ -26,6 +29,7 @@ namespace _Scripts.UI
             _lockImage.fillAmount = unlockPercent * 0.01f;
             
             _unlockPercentLabel.text = (100 - unlockPercent).ToString() + "%";
+            _goldValueLabel.text = gold.ToString();
         }
     }
 }

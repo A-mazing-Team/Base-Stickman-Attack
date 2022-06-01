@@ -22,6 +22,6 @@ MonoBehaviour:
   attackDelay: 1
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   health: 100
-  healthMultiplier: 1.1
+  healthMultiplier: 1.01
   damage: 12
   damageMultiplier: 1.01

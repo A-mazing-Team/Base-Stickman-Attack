@@ -34,6 +34,8 @@ namespace _Scripts.Managers
         //######STATS#######
         protected float _health;
 
+        public float CurrentHealth => _health;
+
         private void OnEnable()
         {
             SceneManager.sceneUnloaded += ResetPool;
@@ -95,6 +97,10 @@ namespace _Scripts.Managers
         }
 
         protected virtual void InitAdditionalData()
+        {
+        }
+        
+        public virtual void Link(StatusBar statusBar)
         {
         }
     }

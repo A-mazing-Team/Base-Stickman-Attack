@@ -14,22 +14,15 @@ namespace _Scripts.UnitSpawner
     {
         [SerializeField]
         private Brush _brush;
-        [SerializeField]
-        private Pistol _defaultSpawnedUnit;
 
 
         [Inject]
         private BattleManager _battleManager;
 
-        private UnitBase _currentSpawnUnit;
+        private UnitBase _currentSpawnUnit = null;
 
         private bool _canSpawn = false;
-
-
-        private void Start()
-        {
-            _currentSpawnUnit = _defaultSpawnedUnit;
-        }
+        
 
         private void OnEnable()
         {
@@ -51,6 +44,10 @@ namespace _Scripts.UnitSpawner
 
         private void Spawn(Vector3 position)
         {
+            if (_currentSpawnUnit == null)
+            {
+                return;
+            }
             if (_currentSpawnUnit.config.cost > _battleManager.Balance || !_canSpawn)
             {
                 return;

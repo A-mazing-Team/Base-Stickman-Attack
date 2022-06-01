@@ -59,6 +59,17 @@ namespace _Scripts.UI
         public void ChangeState(bool on)
         {
             _outline.enabled = on;
+
+            var rect = GetComponent<RectTransform>();
+            
+            if (on)
+            {
+                rect.pivot = new Vector2(0.5f, 0f);
+            }
+            else
+            {
+                rect.pivot = new Vector2(0.5f, 0.5f);
+            }
         }
 
         private void Reset()

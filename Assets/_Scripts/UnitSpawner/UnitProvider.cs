@@ -66,6 +66,15 @@ namespace _Scripts.UnitSpawner
         public void SpawnedUnitChanged(UnitBase unitBase)
         {
             _currentSpawnUnit = unitBase;
+
+            if (_currentSpawnUnit.GetType() == typeof(Tank) || _currentSpawnUnit.GetType() == typeof(Humvee))
+            {
+                _brush.spawnOffset = 1.5f;
+            }
+            else
+            {
+                _brush.spawnOffset = 0.5f;
+            }
         }
 
         public void CanSpan(bool state)

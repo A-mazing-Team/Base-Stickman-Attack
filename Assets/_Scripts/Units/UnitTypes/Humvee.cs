@@ -1,5 +1,6 @@
 using System;
 using _Scripts.Save;
+using _Scripts.Upgrades;
 using UnityEngine;
 
 namespace _Scripts.Managers.UnitTypes
@@ -8,17 +9,18 @@ namespace _Scripts.Managers.UnitTypes
     {
         [SerializeField]
         private UnitBase _linkedTurret;
+
         private void Update()
         {
             if (!_isPrepare)
             {
                 return;
             }
-            
+
             SetTarget();
-            
-            
-            if (_currentTarget!= null && Vector3.Distance(_currentTarget.position, position) > config.attackRange)
+
+
+            if (_currentTarget != null && Vector3.Distance(_currentTarget.position, position) > config.attackRange)
             {
                 MoveToUnit(_currentTarget);
             }
@@ -30,7 +32,8 @@ namespace _Scripts.Managers.UnitTypes
 
         protected override void Death()
         {
-            _linkedTurret.TakeDamage(_linkedTurret.config.upgrades[User.GetUnitLevel(this.config)].health + 1);
+            _linkedTurret.TakeDamage(_linkedTurret.config.health * _linkedTurret.config.healthMultiplier *
+                User.GetUpgradeLevel(UpgradeType.Health) + 1);
             base.Death();
         }
 

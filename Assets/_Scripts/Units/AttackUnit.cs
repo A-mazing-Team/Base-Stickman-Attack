@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using _Scripts.Save;
+using _Scripts.Upgrades;
 using ModestTree;
 using QFSW.MOP2;
 using UnityEngine;
@@ -81,8 +82,10 @@ namespace _Scripts.Managers
         public void OnAnimationShoot()
         {
             _shootFx.Play();
-            
-            if (_currentTarget != null && _currentTarget.TakeDamage(config.upgrades[User.GetUnitLevel(this.config)].damage))
+
+            if (_currentTarget != null &&
+                _currentTarget.TakeDamage((int)( config.damage * config.damageMultiplier *
+                                          User.GetUpgradeLevel(UpgradeType.Damage))))
             {
                 SetTarget();
             }

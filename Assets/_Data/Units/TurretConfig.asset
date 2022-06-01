@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e8f0568fec4c2b896c9dc3c2015ec2, type: 3}
   m_Name: TurretConfig
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
   name: Config
   image: {fileID: 0}
   cost: 5
+  unitPool: {fileID: 0}
   speed: 5
   attackRange: 11
   attackDelay: 0.3
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
-  upgrades:
-  - health: 100
-    damage: 5
+  health: 100
+  healthMultiplier: 1.1
+  damage: 12
+  damageMultiplier: 1.01

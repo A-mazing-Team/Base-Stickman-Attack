@@ -12,7 +12,15 @@ namespace _Scripts.MVC
 
         private void Update()
         {
-            _statusBar.Refresh(_modelBase.health, _modelBase.maxHealth, false);
+            if (_modelBase.health <= 1)
+            {
+                _statusBar.Refresh(0, _modelBase.maxHealth, false);
+            }
+            else
+            {
+                _statusBar.Refresh(_modelBase.health, _modelBase.maxHealth, false);
+            }
+            
             _statusBar.transform.position =  Camera.main.WorldToScreenPoint(_modelBase.position) + _modelBase.offset;
         }
     }

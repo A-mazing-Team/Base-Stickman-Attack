@@ -21,19 +21,7 @@ MonoBehaviour:
   attackRange: 9
   attackDelay: 1
   bulletPool: {fileID: 11400000, guid: 46642a7bf724d4855915a23893cbd596, type: 2}
-  upgrades:
-  - upgradeCost: 0
-    health: 100
-    damage: 5
-  - upgradeCost: 10
-    health: 100
-    damage: 5
-  - upgradeCost: 20
-    health: 100
-    damage: 5
-  - upgradeCost: 20
-    health: 100
-    damage: 5
-  - upgradeCost: 20
-    health: 100
-    damage: 5
+  health: 100
+  healthMultiplier: 1.1
+  damage: 12
+  damageMultiplier: 1.01

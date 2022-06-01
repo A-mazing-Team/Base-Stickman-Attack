@@ -1,5 +1,6 @@
 using _Scripts.MVC;
 using _Scripts.Save;
+using _Scripts.Upgrades;
 using UnityEngine;
 
 namespace _Scripts.Managers
@@ -29,7 +30,7 @@ namespace _Scripts.Managers
                 return;
             }
             
-            _modelBase.maxHealth = config.upgrades[User.GetUnitLevel(this.config)].health;
+            _modelBase.maxHealth = config.health * config.healthMultiplier * User.GetUpgradeLevel(UpgradeType.Health);
         }
 
         protected override void Death()

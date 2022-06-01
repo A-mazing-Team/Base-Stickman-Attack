@@ -1,5 +1,6 @@
 using System;
 using _Scripts.Managers;
+using _Scripts.Upgrades;
 using UnityEngine;
 
 namespace _Scripts.Save
@@ -14,6 +15,12 @@ namespace _Scripts.Save
         private const string BattleDeckData = "Deck";
         private const string BalanceDataName = "Balance";
         private const string DecklenghtData = "DeckLenght";
+        
+        private const string HealthData = "HealthData";
+        private const string DamageData = "DamageData";
+        private const string IncomeData = "IncomeData";
+        
+        
 
 
         public static int Level
@@ -39,6 +46,42 @@ namespace _Scripts.Save
                 PlayerPrefs.SetInt(BalanceDataName, value);
                 BalanceChanged?.Invoke();
             } 
+        }
+
+
+        public static void AddUpgradeLevel(UpgradeType upgradeType)
+        {
+            switch (upgradeType)
+            {
+                case UpgradeType.Damage:
+                    PlayerPrefs.SetInt(DamageData, GetUpgradeLevel(upgradeType) + 1);
+                    break;
+                
+                case UpgradeType.Health:
+                    PlayerPrefs.SetInt(HealthData, GetUpgradeLevel(upgradeType) + 1);
+                    break;
+                
+                case UpgradeType.Income:
+                    PlayerPrefs.SetInt(IncomeData, GetUpgradeLevel(upgradeType) + 1);
+                    break;
+            }
+        }
+        
+        public static int GetUpgradeLevel(UpgradeType upgradeType)
+        {
+            switch (upgradeType)
+            {
+                case UpgradeType.Damage:
+                     return PlayerPrefs.GetInt(DamageData,1);
+                
+                case UpgradeType.Health:
+                    return PlayerPrefs.GetInt(HealthData,1);
+                
+                case UpgradeType.Income:
+                    return PlayerPrefs.GetInt(IncomeData,1);
+            }
+
+            return 0;
         }
 
         public static int GetUnitLevel(UnitConfig config)

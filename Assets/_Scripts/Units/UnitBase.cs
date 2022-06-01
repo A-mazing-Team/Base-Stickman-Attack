@@ -4,6 +4,7 @@ using _Scripts.Battle;
 using _Scripts.Levels;
 using _Scripts.MVC;
 using _Scripts.Save;
+using _Scripts.Upgrades;
 using QFSW.MOP2;
 using UnityEngine;
 using UnityEngine.AI;
@@ -65,7 +66,7 @@ namespace _Scripts.Managers
         {
             //_health = config.health;
             _battleManager = battleManager;
-            _health = config.upgrades[User.GetUnitLevel(this.config)].health;
+            _health = config.health * config.healthMultiplier * User.GetUpgradeLevel(UpgradeType.Health);
             _bulletPool = config.bulletPool;
             InitAdditionalData();
             _isPrepare = true;

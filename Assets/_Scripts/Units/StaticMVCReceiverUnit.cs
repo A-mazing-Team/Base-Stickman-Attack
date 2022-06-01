@@ -1,5 +1,6 @@
 using _Scripts.MVC;
 using _Scripts.Save;
+using _Scripts.Upgrades;
 using UnityEngine;
 
 namespace _Scripts.Managers
@@ -17,13 +18,10 @@ namespace _Scripts.Managers
 
         protected override void InitAdditionalData()
         {
-            _modelBase.maxHealth = config.upgrades[User.GetUnitLevel(this.config)].health;
-        }
-        
-        protected override void Death()
-        {
-            base.Death();
-            _modelBase.health = 0;
+            base.InitAdditionalData();
+            //_modelBase.maxHealth = config.health * config.healthMultiplier * User.GetUpgradeLevel(UpgradeType.Health);
+            _modelBase.maxHealth = _battleManager.CurrentLevel.baseHp;
+            _health = _battleManager.CurrentLevel.baseHp;
         }
     }
 }

@@ -12,8 +12,8 @@ namespace _Scripts.Draw
         private float _height;
         [SerializeField]
         private TrailRenderer _trailRenderer;
-        [SerializeField]
-        private float _spawnOffset;
+        
+        public float spawnOffset;
 
         private Vector3 _previousPosition = Vector3.zero;
 
@@ -69,7 +69,7 @@ namespace _Scripts.Draw
                 var newPosition = GetCameraPosition();
                 _trailRenderer.transform.position = newPosition;
 
-                if (Vector3.Distance(_previousPosition, newPosition) >= _spawnOffset)
+                if (Vector3.Distance(_previousPosition, newPosition) >= spawnOffset)
                 {
                     _previousPosition = newPosition;
                     OnDeltaPassed?.Invoke(newPosition);

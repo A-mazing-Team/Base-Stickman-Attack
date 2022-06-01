@@ -62,6 +62,14 @@ namespace _Scripts.Battle
             }
         }
 
+        public LevelData CurrentLevel
+        {
+            get
+            {
+                return _levels[User.Level];
+            }
+        }
+
         public bool HasAlly
         {
             get
@@ -83,7 +91,7 @@ namespace _Scripts.Battle
             CreateEnemies();
             _avaliableAllyUnitsCount = _levels[User.Level].allyUnitsCount;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
-            _unitsScroll.InitializeCards(false);
+            //_unitsScroll.InitializeCards(false);
         }
 
         private void Update()
@@ -126,7 +134,7 @@ namespace _Scripts.Battle
 
         private void CheckLoose()
         {
-            if (_enemies.IsEmpty() && _base.gameObject.activeSelf == false)
+            if (_enemies.IsEmpty() && _base.IsActive == false)
             {
                 EndGame(true);
             }
@@ -152,7 +160,7 @@ namespace _Scripts.Battle
 
         public List<UnitBase> GetUnits(bool isMyTeam)
         {
-            if (!isMyTeam && _enemies.IsEmpty() && _base.gameObject.activeSelf == true)
+            if (!isMyTeam && _enemies.IsEmpty() && _base.IsActive == true)
             {
                 _enemies.Add(_base);
             }
@@ -199,8 +207,8 @@ namespace _Scripts.Battle
 
         private IEnumerator EndRoutine()
         {
-            yield return new WaitForSeconds(3f);
-            _winUI.Show(_levels[User.Level].unlockUnit);
+            yield return new WaitForSeconds(5f);
+            _winUI.Show(_levels[User.Level].unlockUnit, _levels[User.Level].lockPercent);
         }
     }
 }

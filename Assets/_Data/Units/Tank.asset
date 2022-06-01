@@ -20,17 +20,8 @@ MonoBehaviour:
   speed: 5
   attackRange: 10
   attackDelay: 0.4
-  bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
-  upgrades:
-  - upgradeCost: 0
-    health: 10000
-    damage: 5
-  - upgradeCost: 10
-    health: 10000
-    damage: 5
-  - upgradeCost: 20
-    health: 100000
-    damage: 5
-  - upgradeCost: 20
-    health: 100000
-    damage: 5
+  bulletPool: {fileID: 11400000, guid: dc0758e28be7f48c5a1195b348def3f8, type: 2}
+  health: 100
+  healthMultiplier: 1.1
+  damage: 12
+  damageMultiplier: 1.01

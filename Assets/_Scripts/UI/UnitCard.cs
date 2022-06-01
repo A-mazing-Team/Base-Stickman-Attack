@@ -38,19 +38,19 @@ namespace _Scripts.UI
             unitBase = unit;
             _unitIcon.sprite = unit.config.image;
 
-            _group.gameObject.SetActive(!isBattleRefresh);
-            _upgradeCostLabel.gameObject.SetActive(!isBattleRefresh);
+            _group.gameObject.SetActive(false);
+            _upgradeCostLabel.gameObject.SetActive(false);
 
 
-            if (!isBattleRefresh)
-            {
-                _upgradeCostLabel.text =
-                    unitBase.config.upgrades[User.GetUnitLevel(unitBase.config) + 1].upgradeCost.ToString();
-                
-                bool canUpgrade = unitBase.config.upgrades[User.GetUnitLevel(unitBase.config) + 1].upgradeCost < User.Balance;
-
-                _upgradeCostLabel.color = canUpgrade ? Color.white : Color.red;
-            }
+            // if (!isBattleRefresh)
+            // {
+            //     _upgradeCostLabel.text =
+            //         unitBase.config.upgrades[User.GetUnitLevel(unitBase.config) + 1].upgradeCost.ToString();
+            //     
+            //     bool canUpgrade = unitBase.config.upgrades[User.GetUnitLevel(unitBase.config) + 1].upgradeCost < User.Balance;
+            //
+            //     _upgradeCostLabel.color = canUpgrade ? Color.white : Color.red;
+            // }
 
 
             _button.onClick.AddListener((() => { callback?.Invoke(this); }));

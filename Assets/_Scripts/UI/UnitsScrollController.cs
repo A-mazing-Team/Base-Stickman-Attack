@@ -16,73 +16,65 @@ namespace _Scripts.UI
 
         [Inject]
         private UnitService _unitService;
+
         [Inject]
         private UnitProvider _unitProvider;
 
-        public void InitializeCards(bool isBattle)
+        public void InitializeCards()
         {
             int counter = 0;
-            
+
             var data = User.GetBattleDeckUnitNames();
 
-            if (isBattle)
+
+            for (; counter < data.Length; counter++)
             {
-                for (; counter < data.Length; counter++)
-                {
-                    _unitsCards[counter].Refresh(_unitService.GetUnitByName(data[counter]).prefab, CardClickedInBattle, true);
-                }
+                _unitsCards[counter].Refresh(_unitService.GetUnitByName(data[counter]).prefab, CardClickedInBattle,
+                    true);
             }
-            else
-            {
-                for (; counter < data.Length; counter++)
-                {
-                    _unitsCards[counter].Refresh(_unitService.GetUnitByName(data[counter]).prefab, CardClickedInLobby, false);
-                }
-            }
-            
+
 
             for (; counter < _unitsCards.Length; counter++)
             {
                 _unitsCards[counter].gameObject.SetActive(false);
             }
         }
-    
 
-    private void CardClickedInBattle(UnitCard card)
-    {
-        if (_curentActive == card)
+
+        private void CardClickedInBattle(UnitCard card)
         {
-            return;
-        }
-
-        _curentActive?.ChangeState(false);
-
-        foreach (var unitCard in _unitsCards)
-        {
-            if (card == unitCard)
+            if (_curentActive == card)
             {
-                _curentActive = card;
-                _curentActive.ChangeState(true);
-                _unitProvider.SpawnedUnitChanged(_curentActive.unitBase);
-                break;
+                return;
+            }
+
+            _curentActive?.ChangeState(false);
+
+            foreach (var unitCard in _unitsCards)
+            {
+                if (card == unitCard)
+                {
+                    _curentActive = card;
+                    _curentActive.ChangeState(true);
+                    _unitProvider.SpawnedUnitChanged(_curentActive.unitBase);
+                    break;
+                }
             }
         }
+
+        // private void CardClickedInLobby(UnitCard card)
+        // {
+        //     int upgradeCost = card.unitBase.config.upgrades[User.GetUnitLevel(card.unitBase.config) + 1].upgradeCost;
+        //     
+        //     bool canUpgrade = upgradeCost < User.Balance;
+        //
+        //     if (canUpgrade)
+        //     {
+        //         User.SetUnitToNextLevel(card.unitBase.config);
+        //         User.Balance -= upgradeCost;
+        //         
+        //         card.Refresh(card.unitBase, CardClickedInLobby, false);
+        //     }
+        // }
     }
-
-    private void CardClickedInLobby(UnitCard card)
-    {
-        int upgradeCost = card.unitBase.config.upgrades[User.GetUnitLevel(card.unitBase.config) + 1].upgradeCost;
-        
-        bool canUpgrade = upgradeCost < User.Balance;
-
-        if (canUpgrade)
-        {
-            User.SetUnitToNextLevel(card.unitBase.config);
-            User.Balance -= upgradeCost;
-            
-            card.Refresh(card.unitBase, CardClickedInLobby, false);
-        }
-    }
-}
-
 }

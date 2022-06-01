@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b1a049df774d9c96c5f004fffe1740, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
+  baseHp: 0
   allyUnitsCount: 200
   enemiesPrefab: {fileID: 3443566573932411061, guid: fa86a81ed01424614bcdd56d12b78853,
     type: 3}
   unlockUnit: {fileID: 11400000, guid: 1ae4ae51e0d664f408d89c7f94b3d07d, type: 2}
+  goldReward: 0
+  deckUnitNames: []
+  lockPercent: 90

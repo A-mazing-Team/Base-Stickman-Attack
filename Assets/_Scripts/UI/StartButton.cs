@@ -16,7 +16,8 @@ namespace _Scripts.UI
         {
             _button.onClick.AddListener((() =>
             {
-                _unitsScroll.InitializeCards(true);
+                _unitsScroll.gameObject.SetActive(true);
+                _unitsScroll.InitializeCards();
             }));
         }
     }

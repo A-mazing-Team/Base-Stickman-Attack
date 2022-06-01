@@ -12,14 +12,16 @@ namespace _Scripts.Managers
         public Sprite image;
         public int cost;
         public ObjectPool unitPool;
-        
         public float speed;
         public float attackRange;
         public float attackDelay;
         public ObjectPool bulletPool;
+        
 
-
-        [Header("UpgradeLevels")]
-        public UnitUpgrade[] upgrades;
+         [Header("Stats")]
+         public float health;
+         public float healthMultiplier;
+         public float damage;
+         public float damageMultiplier;
     }
 }

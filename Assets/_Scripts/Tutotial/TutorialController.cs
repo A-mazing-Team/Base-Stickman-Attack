@@ -18,27 +18,38 @@ namespace DefaultNamespace
 
         private Transform _baseTransform;
         
+        public float angularSpeed = 5f;
+        public float circleRad = 100f;
+ 
+        private Vector2 fixedPoint;
+        private float currentAngle;
+
+        private bool _baseMove;
+        private Vector3 _basePosUI;
+        
         public void CameraMoveStage(Transform baseTransform)
         {
             _baseTransform = baseTransform;
             currentStage = TutorStage.Camera;
             
             Vector3 basePosUI = Camera.main.WorldToScreenPoint(baseTransform.position);
+            _basePosUI = basePosUI;
             _handRect.gameObject.SetActive(true);
             _handRect.position = basePosUI;
+            _baseMove = true;
             
-            _cameraSequence = DOTween.Sequence();
-            _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.up * 150f, 1f));
-            _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-            _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.down * 150f, 1f));
-            _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-            
-            _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.left * 150f, 1f));
-            _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-            _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.right * 150f, 1f));
-            _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-
-            _cameraSequence.SetLoops(-1, LoopType.Restart);
+            // _cameraSequence = DOTween.Sequence();
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.up * 150f, 1f));
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.down * 150f, 1f));
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
+            //
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.left * 150f, 1f));
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.right * 150f, 1f));
+            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
+            //
+            // _cameraSequence.SetLoops(-1, LoopType.Restart);
         }
         
         private void UnitSelectStage()
@@ -68,6 +79,7 @@ namespace DefaultNamespace
             if (stage == TutorStage.Camera)
             {
                 _cameraSequence.Kill();
+                _baseMove = false;
                 UnitSelectStage();
             }
             else if(stage == TutorStage.Unit)
@@ -81,6 +93,17 @@ namespace DefaultNamespace
                 currentStage = TutorStage.None;
                 _handRect.gameObject.SetActive(false);
             }
+        }
+        
+        void Update ()
+        {
+            if (_baseMove)
+            {
+                currentAngle += angularSpeed * Time.deltaTime;
+                Vector2 offset = new Vector2(Mathf.Sin(currentAngle), Mathf.Cos(currentAngle)) * circleRad;
+                _handRect.position = (Vector2)_basePosUI + offset;
+            }
+            
         }
     }
 }

@@ -15,13 +15,13 @@ MonoBehaviour:
   prefab: {fileID: 5854529095287720397, guid: 0d97adda6461640b8b871a947b8fb451, type: 3}
   name: Sniper
   image: {fileID: 21300000, guid: 7b115a0c85587984aa02bc8011c38f96, type: 3}
-  cost: 5
+  cost: 6
   unitPool: {fileID: 11400000, guid: ba12411f8a5274ea2bcfcc98946d20f0, type: 2}
   speed: 2
   attackRange: 12
-  attackDelay: 1
+  attackDelay: 0.7
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
-  health: 100
-  healthMultiplier: 1.01
-  damage: 12
-  damageMultiplier: 1.01
+  health: 20
+  healthMultiplier: 1.05
+  damage: 10
+  damageMultiplier: 1.05

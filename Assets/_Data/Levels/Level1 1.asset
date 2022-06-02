@@ -17,7 +17,7 @@ MonoBehaviour:
   enemiesPrefab: {fileID: 2324257041748005384, guid: b4aebdcd4ef1940be919627427275e41,
     type: 3}
   unlockUnit: {fileID: 11400000, guid: 15c6dd875575d4b74b60c91c2d2a2b3b, type: 2}
-  goldReward: 3968
+  goldReward: 1000
   deckUnitNames:
   - {fileID: 11400000, guid: 2a08b9580cd36467e96f6702bc1537ff, type: 2}
-  lockPercent: 90
+  lockPercent: 20

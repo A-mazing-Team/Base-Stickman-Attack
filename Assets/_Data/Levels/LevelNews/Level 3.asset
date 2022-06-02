@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b1a049df774d9c96c5f004fffe1740, type: 3}
   m_Name: Level 3
   m_EditorClassIdentifier: 
-  baseHp: 156
-  allyUnitsCount: 18
-  enemiesPrefab: {fileID: 1888037807651532644, guid: fa86a81ed01424614bcdd56d12b78853,
+  baseHp: 200
+  allyUnitsCount: 50
+  enemiesPrefab: {fileID: 8379173212662097184, guid: 15af665dabef89249b3da29efc4e096e,
     type: 3}
   unlockUnit: {fileID: 11400000, guid: 15c6dd875575d4b74b60c91c2d2a2b3b, type: 2}
-  goldReward: 5
+  goldReward: 60
   deckUnitNames:
   - {fileID: 11400000, guid: 2a08b9580cd36467e96f6702bc1537ff, type: 2}
   lockPercent: 40

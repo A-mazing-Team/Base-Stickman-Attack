@@ -4022,7 +4022,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _baseCost
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
@@ -4037,12 +4037,12 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _costMultiplier
-      value: 1.1
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _incomeMultiplier
-      value: 1.1
+      value: 1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4346369da27e34df88a85dd076ca4e8f, type: 3}
@@ -5442,7 +5442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &774922453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5462,7 +5462,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 208, y: -17.840088}
-  m_SizeDelta: {x: 0, y: 95.6}
+  m_SizeDelta: {x: 141.81, y: 95.6}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &774922454
 MonoBehaviour:
@@ -5672,10 +5672,10 @@ RectTransform:
   m_Father: {fileID: 774922453}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110.005, y: -47.8}
+  m_SizeDelta: {x: 19.61, y: 55.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &792588086
 PrefabInstance:
@@ -7244,7 +7244,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -11991,7 +11990,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _baseCost
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
@@ -12006,7 +12005,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _costMultiplier
-      value: 1.1
+      value: 1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4346369da27e34df88a85dd076ca4e8f, type: 3}
@@ -12390,10 +12389,10 @@ RectTransform:
   m_Father: {fileID: 774922453}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 51.975, y: -47.8}
+  m_SizeDelta: {x: 73.95, y: 55.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799660793
 MonoBehaviour:
@@ -12568,7 +12567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 212.11}
+  m_AnchoredPosition: {x: 0, y: 241}
   m_SizeDelta: {x: 395.25, y: 98.9}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1826503271
@@ -13932,7 +13931,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -14594,6 +14592,31 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db7dc3d1e28e7473f9a5e24fd2fa1a78, type: 2}
   - {fileID: 11400000, guid: 929a4c554224b4ddfbd621e9ccad9558, type: 2}
   - {fileID: 11400000, guid: e05f702ce1d5f44a5925aef08b7d13be, type: 2}
+  - {fileID: 11400000, guid: 9ff53c82891dd44dd9cdfced2d713ab4, type: 2}
+  - {fileID: 11400000, guid: 960a5b839302b7644a45c5ba97eb537b, type: 2}
+  - {fileID: 11400000, guid: 612b62f388374e84286807fba7324c74, type: 2}
+  - {fileID: 11400000, guid: 05dafdc4d09e10544bc2ec4d68fb4cdd, type: 2}
+  - {fileID: 11400000, guid: 68f20ec10f7ce914f8760f95f35d3b8b, type: 2}
+  - {fileID: 11400000, guid: e040d3ebf22776746a9bea8a59496be9, type: 2}
+  - {fileID: 11400000, guid: 06aa41b71b9bb804fb1c040c33980fb2, type: 2}
+  - {fileID: 11400000, guid: 0f99132e7e2bca04f8849170a4b76f55, type: 2}
+  - {fileID: 11400000, guid: ae4a08f274b13c94fb6ad015e29aace3, type: 2}
+  - {fileID: 11400000, guid: 58cab1337ca7742488ba94553b7bcc77, type: 2}
+  - {fileID: 11400000, guid: 57759994b6c8baf41bfabfb631a46987, type: 2}
+  - {fileID: 11400000, guid: 657dc1932ad70294ebb35c0e6f448348, type: 2}
+  - {fileID: 11400000, guid: 6bd4a1fad8ff58d4886b892fd2e0e6d1, type: 2}
+  - {fileID: 11400000, guid: 2fde2a7896d528c4990eeb27139ebf53, type: 2}
+  - {fileID: 11400000, guid: 1369d74e851748b478ac5dc1286c8f99, type: 2}
+  - {fileID: 11400000, guid: 676ab7dd635cf024ea14c46821c60d7d, type: 2}
+  - {fileID: 11400000, guid: 7fd9edaf75b4ca14b9124135042c64ee, type: 2}
+  - {fileID: 11400000, guid: 3b07a0c2532965f44ba366a0db0d69b3, type: 2}
+  - {fileID: 11400000, guid: 75482ed241e3a5b4ab84222849ac6766, type: 2}
+  - {fileID: 11400000, guid: ba5cb96400da3724a9eae3667e8847c3, type: 2}
+  - {fileID: 11400000, guid: 60525d081d17fc942b3cd5e938f83cbe, type: 2}
+  - {fileID: 11400000, guid: a38ca53b7c19ede4eaf687ea46f6e663, type: 2}
+  - {fileID: 11400000, guid: 7a992e3cead87634c86ef33ed2d55b0b, type: 2}
+  - {fileID: 11400000, guid: 41b5779ebeddd82439bfe84ef72ae045, type: 2}
+  - {fileID: 11400000, guid: cbddef8d2deca0945b38fe749af9055b, type: 2}
   _statusValueBar: {fileID: 899959367}
   _staticEnemiesUnits: []
   _unitsScroll: {fileID: 1127134622}
@@ -15055,7 +15078,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _baseCost
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
@@ -15070,7 +15093,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _costMultiplier
-      value: 1.1
+      value: 1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4346369da27e34df88a85dd076ca4e8f, type: 3}
@@ -15139,7 +15162,6 @@ TrailRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -15704,7 +15726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -501}
+  m_AnchoredPosition: {x: 0, y: -532}
   m_SizeDelta: {x: 377.4737, y: 128.9489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4983439452939602503

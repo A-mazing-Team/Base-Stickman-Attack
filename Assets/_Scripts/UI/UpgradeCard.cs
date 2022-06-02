@@ -29,7 +29,8 @@ namespace _Scripts.UI
         private BattleManager _battleManager;
 
         private float Delta => (_baseCost * _costMultiplier) - _baseCost;
-        private float Cost => Delta * ((User.GetUpgradeLevel(_upgradeType) + 1)) + _baseCost;
+        private float Cost => Delta * ((User.GetUpgradeLevel(_upgradeType) + 1)) + (_baseCost *  User.GetUpgradeLevel(_upgradeType));
+        private float CurrentCost => Delta * ((User.GetUpgradeLevel(_upgradeType) + 1)) + (_baseCost *  User.GetUpgradeLevel(_upgradeType));
         private bool CanUpgrade => Cost < User.Balance;
 
         [Header("ONLY FOR INCOME MULTIPLIER")]

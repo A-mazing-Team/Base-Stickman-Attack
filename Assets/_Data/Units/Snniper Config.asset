@@ -18,10 +18,10 @@ MonoBehaviour:
   cost: 6
   unitPool: {fileID: 11400000, guid: ba12411f8a5274ea2bcfcc98946d20f0, type: 2}
   speed: 2
-  attackRange: 12
-  attackDelay: 0.7
+  attackRange: 11
+  attackDelay: 1
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
-  health: 20
+  health: 12
   healthMultiplier: 1.05
-  damage: 10
+  damage: 7
   damageMultiplier: 1.05

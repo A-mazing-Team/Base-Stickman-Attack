@@ -7,6 +7,7 @@ namespace _Scripts.Levels
     [CreateAssetMenu]
     public class LevelData : ScriptableObject
     {
+        public bool needTutor = false;
         public int baseHp;
         public int allyUnitsCount;
         public GameObject enemiesPrefab;

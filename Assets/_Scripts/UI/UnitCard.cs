@@ -3,6 +3,7 @@ using _Scripts.Battle;
 using _Scripts.Managers;
 using _Scripts.Save;
 using _Scripts.UnitSpawner;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +31,7 @@ namespace _Scripts.UI
         [SerializeField]
         private GameObject _group;
 
-        
+
 
 
         public void Refresh(UnitBase unit, Action<UnitCard> callback, bool isBattleRefresh)
@@ -52,7 +53,7 @@ namespace _Scripts.UI
             //     _upgradeCostLabel.color = canUpgrade ? Color.white : Color.red;
             // }
 
-
+            _button.onClick.RemoveAllListeners();
             _button.onClick.AddListener((() => { callback?.Invoke(this); }));
         }
 

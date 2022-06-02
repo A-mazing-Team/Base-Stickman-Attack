@@ -1,5 +1,7 @@
 using System;
+using DefaultNamespace;
 using UnityEngine;
+using Zenject;
 
 namespace _Scripts.CameraMove
 {
@@ -13,6 +15,9 @@ namespace _Scripts.CameraMove
         private Vector3 _currentPosition = Vector3.zero;
         private Vector3 _cameraPosition = Vector3.zero;
         private Vector3 _startPosition = Vector3.zero;
+
+        [Inject]
+        private TutorialController _tutorialController;
 
         private bool _canMove;
 
@@ -61,8 +66,17 @@ namespace _Scripts.CameraMove
 
             position.y = _cameraPosition.y;
 
-        
-            if (Vector3.Distance(_startPosition, position) > _maxOffset)
+            var d = Vector3.Distance(_startPosition, position);
+            
+            if (d > 1.5f)
+            {
+                if (_tutorialController.currentStage == TutorStage.Camera)
+                {
+                    _tutorialController.FinishStage(TutorStage.Camera);
+                }
+            }
+            
+            if (d > _maxOffset)
             {
                 return;
             }

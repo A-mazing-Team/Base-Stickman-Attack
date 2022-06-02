@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b1a049df774d9c96c5f004fffe1740, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
+  needTutor: 1
   baseHp: 200
   allyUnitsCount: 50
   enemiesPrefab: {fileID: 3549710195124665044, guid: f4e662052f8c46f4097e6a740b3f3961,

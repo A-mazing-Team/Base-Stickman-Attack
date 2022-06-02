@@ -2,6 +2,7 @@ using System;
 using _Scripts.Managers;
 using _Scripts.Save;
 using _Scripts.UnitSpawner;
+using DefaultNamespace;
 using UnityEngine;
 using Zenject;
 
@@ -19,6 +20,9 @@ namespace _Scripts.UI
 
         [Inject]
         private UnitProvider _unitProvider;
+        
+        [Inject]
+        private TutorialController _tutorialController;
 
         public void InitializeCards()
         {
@@ -43,6 +47,10 @@ namespace _Scripts.UI
 
         private void CardClickedInBattle(UnitCard card)
         {
+            if (_tutorialController.currentStage == TutorStage.Unit)
+            {
+                _tutorialController.FinishStage(TutorStage.Unit);
+            }
             if (_curentActive == card)
             {
                 return;

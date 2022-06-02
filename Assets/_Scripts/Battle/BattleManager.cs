@@ -10,10 +10,12 @@ using _Scripts.PlayerBase;
 using _Scripts.Save;
 using _Scripts.UI;
 using _Scripts.Upgrades;
+using DefaultNamespace;
 using ModestTree;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace _Scripts.Battle
 {
@@ -58,6 +60,9 @@ namespace _Scripts.Battle
 
         [HideInInspector]
         public float rewardMultiplier;
+
+        [Inject]
+        private TutorialController _tutorialController;
 
         public int ResultReward
         {
@@ -116,7 +121,11 @@ namespace _Scripts.Battle
             _avaliableAllyUnitsCount = _levels[User.Level].allyUnitsCount;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
             StartCoroutine(PassiveAddUnit());
-            //_unitsScroll.InitializeCards(false);
+
+            if (_levels[User.Level].needTutor)
+            {
+                _tutorialController.CameraMoveStage(_base.transform);
+            }
         }
 
         private void Update()
@@ -195,6 +204,14 @@ namespace _Scripts.Battle
             _allies.Add(unit);
             _instanceUnitsCounter+= unit.config.cost;
             _statusValueBar.Refresh(_instanceUnitsCounter, _avaliableAllyUnitsCount, true);
+            
+            if (_levels[User.Level].needTutor)
+            {
+                if (_tutorialController.currentStage == TutorStage.Spawn)
+                {
+                    _tutorialController.FinishStage(TutorStage.Spawn);
+                }
+            }
         }
 
         public List<UnitBase> GetUnits(bool isMyTeam)

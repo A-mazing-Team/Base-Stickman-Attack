@@ -34,7 +34,7 @@ namespace _Scripts.Save
 
         public static int Balance
         {
-            get => PlayerPrefs.GetInt(BalanceDataName, 1000000);
+            get => PlayerPrefs.GetInt(BalanceDataName, 0);
             
             set
             {

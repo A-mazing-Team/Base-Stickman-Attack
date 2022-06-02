@@ -14,8 +14,14 @@ namespace _Scripts.MVC
         private UnitBase _unitBase;
         public bool IsFree => _unitBase == null;
         
-        private Vector3 _offset = new Vector3(0, 130, 0);
-        
+        private Vector3 _offset = new Vector3(0, 80, 0);
+        private float _scaleFactor;
+
+        private void Start()
+        {
+            _scaleFactor = GetComponentInParent<Canvas>().scaleFactor;
+        }
+
         public virtual void Refresh(float value, float maxValue, bool isDiffrent)
         {
             _image.fillAmount = value / maxValue;
@@ -28,7 +34,7 @@ namespace _Scripts.MVC
                 float delta = (_unitBase.config.health * _unitBase.config.healthMultiplier) - _unitBase.config.health;
                 
                 _image.fillAmount = _unitBase.CurrentHealth / ((User.GetUpgradeLevel(UpgradeType.Health) * delta) + _unitBase.config.health);
-                transform.position =  Camera.main.WorldToScreenPoint(_unitBase.position) + _offset;
+                transform.position =  Camera.main.WorldToScreenPoint(_unitBase.position) + _offset * _scaleFactor;
             }
         }
 

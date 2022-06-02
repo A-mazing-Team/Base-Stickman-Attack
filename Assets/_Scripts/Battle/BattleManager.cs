@@ -71,9 +71,7 @@ namespace _Scripts.Battle
         {
             get
             {
-                float delta = (_levels[User.Level].goldReward * rewardMultiplier) - _levels[User.Level].goldReward;
-                return (int) (delta * User.GetUpgradeLevel(UpgradeType.Income)) +
-                       _levels[User.Level].goldReward;
+                return (int) (_levels[User.Level].goldReward * Math.Pow(rewardMultiplier, User.GetUpgradeLevel(UpgradeType.Income)));
             }
         }
         public bool CanSpawnAlly
@@ -247,7 +245,7 @@ namespace _Scripts.Battle
             if (state)
             {
                 StartCoroutine(EndRoutine(User.Level));
-
+                
 
                 User.Balance += ResultReward;
                 
@@ -276,9 +274,8 @@ namespace _Scripts.Battle
         {
             yield return new WaitForSeconds(3.5f);
             
-            float delta = (_levels[prevLevel].goldReward * rewardMultiplier) - _levels[prevLevel].goldReward;
-            int result = (int) (delta * User.GetUpgradeLevel(UpgradeType.Income)) +
-                   _levels[prevLevel].goldReward;
+            
+            int result = (int) (_levels[prevLevel].goldReward * Math.Pow(rewardMultiplier, User.GetUpgradeLevel(UpgradeType.Income)));
             
             _winUI.Show(_levels[prevLevel].unlockUnit, _levels[prevLevel].lockPercent, result);
         }
@@ -287,7 +284,7 @@ namespace _Scripts.Battle
         {
             while (true)
             {
-                if (_isBattleStarted)
+                if (!_isBattleStarted)
                 {
                     yield return null;
                 }

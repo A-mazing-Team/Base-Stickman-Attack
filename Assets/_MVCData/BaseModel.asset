@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfe8b1681404a168b4ec3479edd624e, type: 3}
   m_Name: BaseModel
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 250, z: 0}
-  maxHealth: 2000
-  health: 0
+  offset: {x: 0, y: 150, z: 0}
+  maxHealth: 200
+  health: 200
   position: {x: -6.2634, y: -12.66, z: -21.269}

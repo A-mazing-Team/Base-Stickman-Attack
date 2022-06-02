@@ -4177,7 +4177,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _incomeMultiplier
-      value: 1.05
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4346369da27e34df88a85dd076ca4e8f, type: 3}
@@ -10487,7 +10487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.200012, y: -17.840088}
+  m_AnchoredPosition: {x: -20.199951, y: -17.840088}
   m_SizeDelta: {x: 0, y: 95.6}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1536426422

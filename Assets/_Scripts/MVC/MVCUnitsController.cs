@@ -9,7 +9,14 @@ namespace _Scripts.MVC
         private MVCModelBase _modelBase;
         [SerializeField]
         private StatusBar _statusBar;
+        
+        private float _scaleFactor;
 
+        private void Start()
+        {
+            _scaleFactor = GetComponentInParent<Canvas>().scaleFactor;
+        }
+        
         private void Update()
         {
             if (_modelBase.health <= 1)
@@ -21,7 +28,7 @@ namespace _Scripts.MVC
                 _statusBar.Refresh(_modelBase.health, _modelBase.maxHealth, false);
             }
             
-            _statusBar.transform.position =  Camera.main.WorldToScreenPoint(_modelBase.position) + _modelBase.offset;
+            _statusBar.transform.position =  Camera.main.WorldToScreenPoint(_modelBase.position) + _modelBase.offset * _scaleFactor;
         }
     }
 }

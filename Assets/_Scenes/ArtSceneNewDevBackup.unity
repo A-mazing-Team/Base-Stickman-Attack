@@ -4157,7 +4157,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _baseCost
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
@@ -4172,12 +4172,12 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _costMultiplier
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _incomeMultiplier
-      value: 2
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4346369da27e34df88a85dd076ca4e8f, type: 3}
@@ -7510,7 +7510,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -12504,7 +12503,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _baseCost
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
@@ -12519,7 +12518,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _costMultiplier
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4346369da27e34df88a85dd076ca4e8f, type: 3}
@@ -13195,6 +13194,8 @@ MonoBehaviour:
   _handRect: {fileID: 1363234485}
   _unitCardRect: {fileID: 240297657}
   currentStage: 0
+  angularSpeed: 5
+  circleRad: 100
 --- !u!224 &1828703983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14499,7 +14500,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -15650,7 +15650,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _baseCost
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
@@ -15665,7 +15665,7 @@ PrefabInstance:
     - target: {fileID: 5871642450742960226, guid: 4346369da27e34df88a85dd076ca4e8f,
         type: 3}
       propertyPath: _costMultiplier
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4346369da27e34df88a85dd076ca4e8f, type: 3}
@@ -15734,7 +15734,6 @@ TrailRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0

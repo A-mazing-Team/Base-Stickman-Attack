@@ -107,7 +107,7 @@ namespace _Scripts.Battle
 
         private void Start()
         {
-            _levelLabel.text = User.Level.ToString();
+            _levelLabel.text = (User.Level +1).ToString();
             
             User.UpdateBattleDeck(_levels[User.Level].deckUnitNames);
             

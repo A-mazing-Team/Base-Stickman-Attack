@@ -5889,6 +5889,7 @@ MonoBehaviour:
   - {fileID: 412032763617030358}
   - {fileID: 5873256328032862046}
   _explodeParticle: {fileID: 607546806677756885}
+  _destroyMaterial: {fileID: 2100000, guid: d21b27f6570160f478b88cc7b04f17e7, type: 2}
 --- !u!1 &6690003090242122689
 GameObject:
   m_ObjectHideFlags: 0

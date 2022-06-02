@@ -13,6 +13,9 @@ namespace _Scripts.Managers.UnitTypes
         [SerializeField]
         private ParticleSystem _explodeParticle;
 
+        [SerializeField]
+        private Material _destroyMaterial;
+
         protected override void Attack()
         {
             base.Attack();
@@ -25,7 +28,7 @@ namespace _Scripts.Managers.UnitTypes
             
             foreach (var meshRenderer in _meshRenderers)
             {
-                meshRenderer.material.color = Color.black;
+                meshRenderer.material = _destroyMaterial;
             }
             
             _explodeParticle.gameObject.SetActive(true);

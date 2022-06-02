@@ -30,7 +30,7 @@ namespace _Scripts.Managers
                 return;
             }
             float delta = (config.health * config.healthMultiplier) - config.health;
-            _modelBase.maxHealth = (int) (delta * User.GetUpgradeLevel(UpgradeType.Health) + config.health);
+            _modelBase.maxHealth = (delta * User.GetUpgradeLevel(UpgradeType.Health) + config.health);
         }
 
         protected override void Death()

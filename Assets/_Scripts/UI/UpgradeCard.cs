@@ -29,8 +29,8 @@ namespace _Scripts.UI
         private BattleManager _battleManager;
 
         private float Delta => (_baseCost * _costMultiplier) - _baseCost;
-        private float Cost => Delta * ((User.GetUpgradeLevel(_upgradeType) + 1)) + (_baseCost *  User.GetUpgradeLevel(_upgradeType));
-        private float CurrentCost => Delta * ((User.GetUpgradeLevel(_upgradeType) + 1)) + (_baseCost *  User.GetUpgradeLevel(_upgradeType));
+        private float Cost => _baseCost * Mathf.Pow(_costMultiplier, User.GetUpgradeLevel(_upgradeType));
+        private float CurrentCost => _baseCost * _costMultiplier * (User.GetUpgradeLevel(_upgradeType) + 1);  
         private bool CanUpgrade => Cost < User.Balance;
 
         [Header("ONLY FOR INCOME MULTIPLIER")]
@@ -47,7 +47,7 @@ namespace _Scripts.UI
             _costLabel.color = CanUpgrade ? Color.white : Color.red;
             _costLabel.text = ((int)Cost).ToString();
 
-            _levelValueLabel.text = User.GetUpgradeLevel(_upgradeType).ToString();
+            _levelValueLabel.text = (User.GetUpgradeLevel(_upgradeType) +1).ToString();
 
             _button.onClick.RemoveAllListeners();
             _button.onClick.AddListener(Upgrade);

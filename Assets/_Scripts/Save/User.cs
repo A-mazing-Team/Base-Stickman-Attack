@@ -68,13 +68,13 @@ namespace _Scripts.Save
             switch (upgradeType)
             {
                 case UpgradeType.Damage:
-                     return PlayerPrefs.GetInt(DamageData,1);
+                     return PlayerPrefs.GetInt(DamageData,0);
                 
                 case UpgradeType.Health:
-                    return PlayerPrefs.GetInt(HealthData,1);
+                    return PlayerPrefs.GetInt(HealthData,0);
                 
                 case UpgradeType.Income:
-                    return PlayerPrefs.GetInt(IncomeData,1);
+                    return PlayerPrefs.GetInt(IncomeData,0);
             }
 
             return 0;

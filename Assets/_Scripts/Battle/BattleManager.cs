@@ -47,6 +47,9 @@ namespace _Scripts.Battle
         [SerializeField]
         private TextMeshProUGUI _levelLabel;
 
+        [SerializeField]
+        private TextMeshProUGUI _looseBalanceLabel;
+
 
         private List<UnitBase> _allies;
 
@@ -257,6 +260,8 @@ namespace _Scripts.Battle
             }
             else
             {
+                User.Balance += ResultReward / 2;
+                _looseBalanceLabel.text = (ResultReward / 2).ToString();
                 _looseUI.SetActive(true);
             }
         }

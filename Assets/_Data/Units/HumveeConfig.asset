@@ -19,7 +19,7 @@ MonoBehaviour:
   unitPool: {fileID: 11400000, guid: 31e465c78df554c40a0dd9c64ace8475, type: 2}
   speed: 5
   attackRange: 8
-  attackDelay: 0.5
+  attackDelay: 1
   bulletPool: {fileID: 11400000, guid: 99039301a963a4a53b634b6c244c49e3, type: 2}
   health: 50
   healthMultiplier: 1.05

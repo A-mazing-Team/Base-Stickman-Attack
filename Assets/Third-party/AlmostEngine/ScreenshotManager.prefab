@@ -84,6 +84,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &11400040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,6 +1452,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &11400046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,7 +1520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Config:
     m_DestinationFolder: 0
-    m_CustomRootedPath: /Users/darkflamedx/Desktop
+    m_CustomRootedPath: C:/Users/Kostya/Desktop/HC/video/Base Stickman Attack
     m_CustomRelativePath: Screenshots
     m_FileName: '{width}x{height}/{year}-{month}-{day}_{hour}h{minute}_{second}'
     m_OverrideFiles: 0
@@ -1544,7 +1546,7 @@ MonoBehaviour:
       m_FOV: 70
     m_ResolutionCaptureMode: 1
     m_Resolutions:
-    - m_Active: 1
+    - m_Active: 0
       m_Width: 2688
       m_Height: 1242
       m_Scale: 1
@@ -1557,7 +1559,7 @@ MonoBehaviour:
       m_FileName: C:\Users\iron\Pictures/Screenshots/1920x1080-screenshot.png
       m_Orientation: 1
       m_IgnoreOrientation: 0
-    - m_Active: 1
+    - m_Active: 0
       m_Width: 2208
       m_Height: 1242
       m_Scale: 1
@@ -1571,8 +1573,8 @@ MonoBehaviour:
       m_Orientation: 1
       m_IgnoreOrientation: 0
     - m_Active: 1
-      m_Width: 2732
-      m_Height: 2048
+      m_Width: 1024
+      m_Height: 500
       m_Scale: 1
       m_PPI: 0
       m_ForcedUnityPPI: 0
@@ -1581,7 +1583,7 @@ MonoBehaviour:
       m_Stats: 0
       m_Category: Custom
       m_FileName: 
-      m_Orientation: 1
+      m_Orientation: 0
       m_IgnoreOrientation: 0
     m_CaptureActiveUICanvas: 1
     m_Overlays:
@@ -1966,6 +1968,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &11400060
 MonoBehaviour:
   m_ObjectHideFlags: 0

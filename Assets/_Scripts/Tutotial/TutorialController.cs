@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -26,7 +27,14 @@ namespace DefaultNamespace
 
         private bool _baseMove;
         private Vector3 _basePosUI;
-        
+
+        private float _scaleFactor;
+
+        private void Start()
+        {
+            _scaleFactor = GetComponentInParent<Canvas>().scaleFactor;
+        }
+
         public void CameraMoveStage(Transform baseTransform)
         {
             _baseTransform = baseTransform;
@@ -38,18 +46,6 @@ namespace DefaultNamespace
             _handRect.position = basePosUI;
             _baseMove = true;
             
-            // _cameraSequence = DOTween.Sequence();
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.up * 150f, 1f));
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.down * 150f, 1f));
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-            //
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.left * 150f, 1f));
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI + Vector3.right * 150f, 1f));
-            // _cameraSequence.Append(_handRect.DOMove(basePosUI, 1f));
-            //
-            // _cameraSequence.SetLoops(-1, LoopType.Restart);
         }
         
         private void UnitSelectStage()
@@ -67,9 +63,9 @@ namespace DefaultNamespace
             currentStage = TutorStage.Spawn;
             Vector3 basePosUI = Camera.main.WorldToScreenPoint(_baseTransform.position);
 
-            _handRect.position = basePosUI + (Vector3.down * 500f) + (Vector3.left * 150f) ;
+            _handRect.position = basePosUI + (Vector3.down * 300f * _scaleFactor) + (Vector3.left * 150f * _scaleFactor) ;
 
-            _spawnSequence.Append(_handRect.DOMove(_handRect.position + Vector3.right * 300f, 1f)
+            _spawnSequence.Append(_handRect.DOMove(_handRect.position + Vector3.right * 300f * _scaleFactor, 1f)
                 .SetLoops(-1, LoopType.Restart));
         }
 
